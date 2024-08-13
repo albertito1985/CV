@@ -1,0 +1,66 @@
+.experienceInfo{
+    height:100vh;
+    width:50%;
+    background-color: var(--Darks-Dark);
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.experienceInfoOuter{
+    width:80%;
+    height:80vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.experienceInfoInner{
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+.experienceInfo h2{
+    font-family: "Krona One";
+    font-size:31px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color:var(--Normals-White);
+}
+
+.experienceInfo p{
+    font-family: Inter;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 150;
+    line-height: normal;
+    color:var(--Normals-White);
+}
+
+.experienceLoveContainer{
+    color:var(--Normals-White);
+    font-family:'Inter';
+    padding-bottom:20px;
+    border-bottom:1px solid var(--Normals-White);
+}
+
+.experienceLoggaContainer{
+    height:50px;
+}
+
+.TIBSI {
+    background-image:url("../../images/Experience/Tibsi/TIBSILogo.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.experienceCommentContainer{
+    color:var(--Normals-White);
+    font-family:'Inter';
+    padding-top:20px;
+    border-top:1px solid var(--Normals-White);
+}

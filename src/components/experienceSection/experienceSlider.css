@@ -1,0 +1,49 @@
+.experienceSlider{
+    width:50%;
+    height:100vh;
+    background-color:var(--Normals-White);
+    position:relative;
+}
+
+.experienceBackground{
+width:100%;
+height:100%;
+display:flex;
+flex-direction: column;
+justify-content: center;
+background-size:100%;
+background-repeat:no-repeat;
+background-position: center;
+}
+
+.experienceForeground{
+    width:100%;
+    height:65%;
+    background-image: url;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+.dotsContainer{
+    width:100%;
+    height:100px;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+.experienceDots{
+    width:20px;
+    height:20px;
+    background-color:var(--Whites-Grayish);
+    border-radius:100px;
+    transition:background-color 0,5s ease-in-out;
+}
+
+.actualDot{
+    background-color:var(--Darks-Dark);
+}

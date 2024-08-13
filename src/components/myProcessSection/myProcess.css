@@ -1,0 +1,54 @@
+.myProcess{
+    position:relative;
+    height:800vh;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    background:var(--Gradient);
+}
+
+.myProcess h1{
+    font-family:'Cinzel Decorative'
+}
+
+.cofeeImages{
+    width:100%;
+}
+
+.entireImage{
+    width:100%;
+    height:100vh;
+    position:absolute;
+    background-image:url('../../images/cofee.jpg');
+    background-position: center;
+    background-size: 150%;
+    top:0;
+    opacity:100;
+}
+
+.holeImage{
+    width:100%;
+    height:100vh;
+    position:absolute;
+    background-image:url('../../images/cofee.png');
+    background-position: center;
+    background-size: 150%;
+    top:0;
+}
+
+.initials{
+    position:absolute;
+    top:50vh;
+    left:50vw;
+    transform: translate(-55%, -50%);
+}
+
+
+.myProcessContent{
+    position:-webkit-sticky;
+    position:sticky;
+    top:-1px;
+    height:100vh;
+    width:100%;
+}
+

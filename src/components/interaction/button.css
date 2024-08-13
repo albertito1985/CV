@@ -1,0 +1,15 @@
+.buttonComponent{
+    color:var(--Darks-Dark);
+    background-color:var(--Normals-White);
+    padding:10px 20px;
+    width:fit-content;
+    border-radius:10px;
+    transition: color 0s ease-in-out, background-color 1s ease-in-out;
+    border:1px solid var(--Normals-White);
+}
+
+div.buttonComponent:hover{
+    color:var(--Normals-White);
+    background-color:var(--Darks-Dark);
+    border:1px solid var(--Normals-White);
+}

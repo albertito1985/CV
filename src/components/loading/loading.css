@@ -1,0 +1,23 @@
+.loading {
+    height:100vh;
+    width:100%;
+    background: var(--Gradient);   
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    gap:80px;
+    top:0;
+}
+
+.WelcomeMessage{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    gap:30px;
+}
+
+.WelcomeMessage>*{
+    margin:0;
+}

@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Hero from './components/heroSection/hero';
+import MyProcess from './components/myProcessSection/myProcess';
+import ExperienceSection from './components/experienceSection/experienceSection';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props){
+    super(props);
+      this.state = {
+        loading:true,
+        scrollPosition:undefined
+      }
+    this.scrollHandler=this.scrollHandler.bind(this);
+  }
+
+static getDerivedStateFromProps(props,state) {
+    state.scrollPosition=window.pageYOffset;
+    return null;
+ }
+
+componentDidMount(){
+  document.addEventListener("scroll",this.scrollHandler);
+  /*Turns on the loading screen */
+    /* setTimeout(()=>{this.setState({loading:false})}, 5000);  Taken away for testing reasons*/
 }
 
-export default App;
+componentWillUnmount(){
+  document.removeEventListener("scroll",this.scrollHandler);
+}
+
+scrollHandler(){
+  let newScrollPosition= window.pageYOffset;
+  this.setState({scrollPosition:newScrollPosition});
+}
+
+  render() {
+    let configurationObject={
+      scrollPosition:this.state.scrollPosition,
+      vh:document.documentElement.clientHeight || window.innerHeight || 0
+    }
+
+    return (
+      <div className="App">
+        <header className="App-header">
+        </header>
+        {/* this.state.loading?
+        <Loading/>: */
+        <div>
+          <Hero/>
+          <MyProcess configurationObject={configurationObject} />
+          <ExperienceSection configurationObject={configurationObject}/>
+        </div>}
+      
+    </div>
+    )
+  }
+}

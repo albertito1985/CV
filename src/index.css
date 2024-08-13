@@ -1,3 +1,36 @@
+:root{
+  --Gradient: linear-gradient(90deg, #6322DE 0%, #2E809C 100%);
+  --Normals-White: #FDF7FF;
+  --Whites-Grayish:#D8CEE2;
+  --Darks-Dark: #231926;
+}
+
+*,*::before,*::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+h1{
+  font-family: "Krona One, Sans-serif";
+  font-size: 81px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--Normals-White);
+}
+
+h3{
+  font-family: Halant;
+  font-size: 31px;
+  font-style: normal;
+  font: sans-serif;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--Normals-White);
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +40,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.section {
+  height:1wh;
+  
 }
