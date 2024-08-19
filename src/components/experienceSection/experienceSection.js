@@ -11,8 +11,8 @@ export default class ExperienceSection extends Component {
         <div className="experienceSection">
             <div className="experienceSectionContent">
                 <div id="experience1">
-                    <ExperienceSlider pics={experienceData.TIBSI.pics} name={experienceData.TIBSI.name}/>
-                    <ExperienceInfo info={experienceData.TIBSI}/>
+                    <ExperienceSlider pics={experienceData.SquidFactor.pics} name={experienceData.SquidFactor.name}/>
+                    <ExperienceInfo info={experienceData.SquidFactor}/>
                 </div>
             
             </div>

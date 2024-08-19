@@ -8,7 +8,17 @@ export default class ExperienceInfo extends Component {
     this.state={
 
     }
+    this.addLogga=this.addLogga.bind(this);
   }
+  componentDidMount(){
+    this.addLogga();
+  }
+
+  addLogga(){
+    let container = document.getElementById(`logga${this.props.info.name}`);
+    container.style.backgroundImage = `url(${this.props.info.logo})`;
+  }
+
   render() {
     return (
       <div className="experienceInfo">
@@ -17,7 +27,7 @@ export default class ExperienceInfo extends Component {
             <div className="experienceLoveContainer">
               <p className="love" >Work I love</p>
             </div>
-            <div className={`experienceLoggaContainer ${this.props.info.name}`}>
+            <div className={`experienceLoggaContainer ${this.props.info.name}`} id={`logga${this.props.info.name}`}>
             </div>
             <div className="experienceProjectContainer">
               <h2>Project</h2>

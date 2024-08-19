@@ -34,6 +34,7 @@ scrollHandler(){
 }
 
   render() {
+    console.log("App Mounted")
     let configurationObject={
       scrollPosition:this.state.scrollPosition,
       vh:document.documentElement.clientHeight || window.innerHeight || 0
@@ -47,7 +48,7 @@ scrollHandler(){
         <Loading/>: */
         <div>
           <Hero/>
-          <MyProcess configurationObject={configurationObject} />
+          {/* <MyProcess configurationObject={configurationObject} /> */}
           <ExperienceSection configurationObject={configurationObject}/>
         </div>}
       

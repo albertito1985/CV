@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component } from 'react';
 import './experienceSlider.css';
 
 export default class ExperienceSlider extends Component {
@@ -27,13 +27,14 @@ export default class ExperienceSlider extends Component {
       let foregroundObject= this.props.pics[i].foreground;
       let background= document.getElementById(`${name}Back${i}`);
       let foreground= document.getElementById(`${name}Fore${i}`);
+      
       background.style.backgroundImage = `url(${backgroundObject.pic})`;
-      foreground.style.backgroundImage = `url(${foregroundObject.pic})`;
       if(backgroundObject.style){
         for(let x=0;x<backgroundObject.style.length;x++){
           background.style[backgroundObject.style[x].name]=backgroundObject.style[x].value;
         }
       };
+      foreground.style.backgroundImage = `url(${foregroundObject.pic})`;
       if(foregroundObject.style){
         for(let x=0;x<foregroundObject.style.length;x++){
           foreground.style[foregroundObject.style[x].name]=foregroundObject.style[x].value;
@@ -48,6 +49,7 @@ export default class ExperienceSlider extends Component {
     for(let i=0;i<this.props.pics.length;i++){
       content.push(<div className="experienceBackground" id={`${name}Back${i}`} key={`${name}Back${i}`}>
         <div className="experienceForeground" id={`${name}Fore${i}`}>
+          {(this.props.pics[i].foreground.type === "component")? this.props.pics[i].foreground.pic:false }
         </div>
       </div>)
     }

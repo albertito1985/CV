@@ -14,13 +14,10 @@ export default class MyProcess extends Component {
         /*Adjustments */
         this.startZoom=150;
         this.maxZoom=1500;
-        this.speed=10;
         /*as it is configured you can conly choose a total of 8 sections*/
         this.sectionsCofee=3;
         this.sectionsProcess=5;
         /*Variables*/
-        this.vh=undefined;
-        /* this.startSection=undefined; */
         this.cofeePath=undefined;
         this.intervalZoom=undefined;
         /*Binding this to the functions */
@@ -38,16 +35,12 @@ export default class MyProcess extends Component {
       return null;
     }
     componentDidMount(){
-      /* this.startScrollPosition=window.pageYOffset; */
       let myProcess = document.getElementsByClassName("myProcess")[0];   
       let myProcesscontent = document.getElementsByClassName("myProcessContent")[0];
       let myProcessHeight= myProcess.clientHeight;
-      /* this.vh= myProcesscontent.clientHeight; */
-      /* let percentagePerSection=this.vh/myProcessHeight; */
-      console.log(this.state.vh);
       let percentagePerSection=this.state.vh/myProcessHeight;
       this.intervalZoom=this.maxZoom-this.startZoom;
-      this.cofeePath=this.sectionsCofee*this.vh;
+      this.cofeePath=this.sectionsCofee*this.state.vh;
       this.cofeeAnimation();
 
       /*Observer */
@@ -68,7 +61,6 @@ export default class MyProcess extends Component {
     }
 
     scrollHandler(){
-     /*  this.scrollPosition=window.pageYOffset; */
       this.cofeeAnimation(this.state.scrollPosition);
       this.sectionsTrigger(this.state.scrollPosition);
     }
@@ -78,13 +70,13 @@ export default class MyProcess extends Component {
     }
 
     calculateSection(scrollPosition){
-      let actualSection = (Math.floor(scrollPosition/this.vh));
+      let actualSection = (Math.floor(scrollPosition/this.state.vh));
       let validatedSection = ((actualSection-this.sectionsCofee)>-1 && (actualSection-this.sectionsCofee)<this.sectionsProcess+1)?actualSection-this.sectionsCofee:false;
       return validatedSection;
     }
 
     calculateScrollPercentage(){
-      return ((this.state.scrollPosition-this.vh)*100)/(this.cofeePath-this.vh)
+      return ((this.state.scrollPosition-this.state.vh)*100)/(this.cofeePath-this.state.vh)
     }
 
     cofeeAnimation(){
