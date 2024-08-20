@@ -6,12 +6,33 @@ export default class ExperienceInfo extends Component {
   constructor(props){
     super(props);
     this.state={
-
     }
+    this.show=false
     this.addLogga=this.addLogga.bind(this);
+    this.animateText=this.animateText.bind(this);
   }
+  
   componentDidMount(){
     this.addLogga();
+  }
+  componentDidUpdate(){
+    this.animateText();
+  }
+
+  animateText(){
+  animation=animation.bind(this);
+    if(this.props.show!==this.show){
+      animation();
+      this.show=!this.show;
+    };
+
+    function animation(){
+      let experienceInfoOuter=document.getElementById(`experienceInfoOuter${this.props.info.name}`);
+      setTimeout(()=>{
+        console.log(experienceInfoOuter.classList.toggle("experienceInfoOuterAnimation"));
+      },1000);
+      this.setState({showing:!this.props.showing});
+    }  
   }
 
   addLogga(){
@@ -22,7 +43,7 @@ export default class ExperienceInfo extends Component {
   render() {
     return (
       <div className="experienceInfo">
-        <div className="experienceInfoOuter">
+        <div className="experienceInfoOuter" id={`experienceInfoOuter${this.props.info.name}`}>
           <div className="experienceInfoInner">
             <div className="experienceLoveContainer">
               <p className="love" >Work I love</p>

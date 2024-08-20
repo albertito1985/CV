@@ -11,27 +11,22 @@ export default class ImageRoller extends Component {
         
     }
     componentDidMount(){
-      console.log("RollerMounted");
-      
         let fixed= document.getElementById(`${this.props.name}${this.props.number}Fixed`);
         let moving= document.getElementById(`${this.props.name}${this.props.number}Moving`);
         fixed.style.backgroundImage = `url(${this.props.fixed})`;
         moving.style.backgroundImage = `url(${this.props.moving})`;
-
-      console.log(this.props)
         /**Option 2 */
-        /* this.animateRoller();     */    
+        this.animateRoller();
     }
 
 
     animateRoller(){
-      
         var moving= document.getElementById(`${this.props.name}${this.props.number}Moving`);        
         if(this.animation===false){
           this.animation=true;
+          moving.classList.toggle("movingImageAnimate");
           var interval= setInterval(()=>{
-            console.log(moving.classList.toggle("movingImageAnimate"));
-            console.log("runned");
+            moving.classList.toggle("movingImageAnimate");
           },5000)
         }
     }

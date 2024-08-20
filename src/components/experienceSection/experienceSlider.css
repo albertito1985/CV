@@ -3,9 +3,16 @@
     height:100vh;
     background-color:var(--Normals-White);
     position:relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    
 }
 
+
 .experienceBackground{
+position:absolute;
 width:100%;
 height:100%;
 display:flex;
@@ -14,7 +21,22 @@ justify-content: center;
 background-size:100%;
 background-repeat:no-repeat;
 background-position: center;
+left:0;
+transition:left 1s ease;
 }
+
+.experienceBackgroundAnimateLeft{
+    left:-100%;
+}
+
+.experienceBackgroundAnimateRight{
+    left:100%;
+}
+
+.experienceBackgroundAnimateActual{
+    left:0;
+}
+
 
 .experienceForeground{
     width:100%;
@@ -52,10 +74,14 @@ background-position: center;
     background-color:var(--Darks-Dark);
 }
 
-#squidFactorBack0{
-    display:none;
+/* #squidFactorBack0{
+    
 }
 
 #squidFactorBack1{
-    display:none;
+    left:100%;
 }
+
+#squidFactorBack2{
+   left:-100%;
+}  */

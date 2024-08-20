@@ -19,6 +19,7 @@ static getDerivedStateFromProps(props,state) {
  }
 
 componentDidMount(){
+  console.log("App");
   document.addEventListener("scroll",this.scrollHandler);
   /*Turns on the loading screen */
     /* setTimeout(()=>{this.setState({loading:false})}, 5000);  Taken away for testing reasons*/
@@ -34,7 +35,6 @@ scrollHandler(){
 }
 
   render() {
-    console.log("App Mounted")
     let configurationObject={
       scrollPosition:this.state.scrollPosition,
       vh:document.documentElement.clientHeight || window.innerHeight || 0
