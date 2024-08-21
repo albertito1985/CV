@@ -5,22 +5,25 @@ export default class ExperienceSlider extends Component {
   constructor(props){
     super(props);
     this.state={
+      previousPicture:0,
       actualPicture:0,
       scrollPosition:undefined,
-      scrollDirection:undefined
+      scrollDirection:0
     };
     this.show=false;
     this.createContent=this.createContent.bind(this);
     this.assignPics=this.assignPics.bind(this);
     this.createDots=this.createDots.bind(this);
-    this.resetAnimation=this.resetAnimation.bind(this);
     this.animatePictures=this.animatePictures.bind(this);
-    this.calculateDirection=this.calculateDirection.bind(this);
+    this.nextPicture=this.nextPicture.bind(this);
+    this.previousPicture=this.previousPicture.bind(this);
   }
 
   static getDerivedStateFromProps(props,state){
-    state.scrollDirection = (state.scrollPosition>props.scrollposition)?"up":"down";
-    state.scrollPosition = props.scrollposition;
+    if(state.scrollPosition!==props.scrollPosition){
+      state.scrollDirection = (state.scrollPosition>props.scrollPosition)?"up":"down";
+      state.scrollPosition = props.scrollPosition;
+    }
     return null;
   }
 
@@ -28,86 +31,45 @@ export default class ExperienceSlider extends Component {
     this.assignPics();
   }
 
-  resetAnimation(){
-
-  }
-
   componentDidUpdate(){
-/*     this.animateText();
-    this.animatePictures(); */
-  }
-
-  calculateDirection(){
-
+    (!isNaN(this.state.actualPicture)) && this.animatePictures();
   }
 
   animatePictures(){
-    console.log("animate");
+    if(this.state.previousPicture===this.state.actualPicture){
+      return null;
+    }
+    console.log({previous:this.state.previousPicture,actual:this.state.actualPicture});
     let length=this.props.pics.length;
-    let middlepoint=(this.props.pics.length-2)/2;
-    let oddMiddle=(middlepoint%2)?true:false;
-    let left= oddMiddle?middlepoint+0.5:middlepoint;
-    let orderedArray=[]
-    let processingPictureNumber=this.state.actualPicture-left;
-    if(processingPictureNumber<0)processingPictureNumber=length+processingPictureNumber;
-    let AnimationDirection = "rightToLeft";
+    /**Animate actual picture to the middle */
+    let actualPicture= document.getElementById(`${this.props.name}Back${this.state.actualPicture}`);
+    let previousPicture= document.getElementById(`${this.props.name}Back${this.state.previousPicture}`);
 
-    for(let i=0; i<length;i++){
-      if(processingPictureNumber===length){
-        processingPictureNumber=0;
-      };
-      orderedArray.push(processingPictureNumber);
+    /**Observar */
+    actualPicture.style.visibility="visible";
+    actualPicture.classList.remove("experienceBackgroundAnimateLeft");
+    actualPicture.classList.remove("experienceBackgroundAnimateRight");
+
+    /**Animate the other pictures depending on the direction of the scrolling*/
+      let leftIndex = (this.state.actualPicture-1<0)?length-1:this.state.actualPicture-1;
+      let rightIndex = (this.state.actualPicture+1>=length)?0:this.state.actualPicture+1;
+      let LeftContainer= document.getElementById(`${this.props.name}Back${leftIndex}`);
+      let rightContainer= document.getElementById(`${this.props.name}Back${rightIndex}`);
       
-      processingPictureNumber++;
+    if(this.state.scrollDirection==="up"){
+      previousPicture.classList.add("experienceBackgroundAnimateRight");
+      /* previousPicture.style.visibility="hidden"; */
+      /* LeftContainer.style.visibility="hidden"; */
+      LeftContainer.classList.remove("experienceBackgroundAnimateRight");
+      LeftContainer.classList.add("experienceBackgroundAnimateLeft");
+    }else{
+      previousPicture.classList.add("experienceBackgroundAnimateLeft");
+      /* rightContainer.style.visibility="hidden"; */
+      rightContainer.classList.remove("experienceBackgroundAnimateLeft");
+      rightContainer.classList.add("experienceBackgroundAnimateRight");
     }
-    /** Aquí me quedé */
-    for(let i=0; i<orderedArray.length-1;i++){
-      
-      let animationLeft=(this.state.direction==="up")?"experienceBackgroundAnimateLeft":"experienceBackgroundAnimateRight";
-      let animationRight=(this.state.direction==="up")?"experienceBackgroundAnimateRight":"experienceBackgroundAnimateLeft";
-
-      if(orderedArray[i]===this.state.actualPicture){
-        let pic = document.getElementById(`${this.props.name}Back${orderedArray[i]}`);
-        pic.classList.add("experienceBackgroundAnimateActual");
-      }
-      if(orderedArray[i+1]===this.state.actualPicture){
-        let pic = document.getElementById(`${this.props.name}Back${orderedArray[i+1]}`);
-        pic.classList.add(animationLeft);
-      }
-      if(orderedArray[i-1]===this.state.actualPicture){
-        let pic = document.getElementById(`${this.props.name}Back${orderedArray[i-1]}`);
-        pic.classList.add(animationRight);
-      }
-    }
-
-    /* let pic = document.getElementById(`${this.props.name}Back${processingPictureNumber}`);      
-    if(processingPictureNumber===this.state.actualPicture){
-      pic.classList.add("experienceBackgroundAnimateActual");
-    }else if(processingPictureNumber>this.state.actualPicture){
-      pic.classList.add("experienceBackgroundAnimateRight")
-    }else if(processingPictureNumber<this.state.actualPicture){
-      pic.classList.add("experienceBackgroundAnimateLeft")
-    } */
-    
+    this.setState({previousPicture:this.state.actualPicture});
   }
-
-  animateText(){
-    animation=animation.bind(this);
-    if(this.props.show!==this.show){
-      animation();
-      this.show=!this.show;
-    };
-
-    function animation(){
-      let experienceSlider=document.getElementById(`experienceSlider${this.props.name}`);
-      setTimeout(()=>{
-        experienceSlider.classList.toggle("experienceSlideranimate");
-      },1000);
-      this.setState({showing:!this.props.showing});
-    }
-  }
-
-
 
   assignPics(){
     let name=this.props.name;
@@ -139,20 +101,19 @@ export default class ExperienceSlider extends Component {
         assigning="right";
       };
       let pic = document.getElementById(`${this.props.name}Back${counter}`);
-      console.log(pic.style);
       if(counter=== 0){
         /**Do nothing */
       }else if(assigning==="left"){
-        pic.style.visibility = "hidden";
-        pic.style.left="-100%";
+        /* pic.style.visibility = "hidden"; */
+        pic.classList.add("experienceBackgroundAnimateLeft");
+        /* pic.style.left="-100%"; */
       }else if(assigning==="right"){
-        pic.style.visibility = "hidden";
-        pic.style.left="100%";
+        /* pic.style.visibility = "hidden"; */
+        pic.classList.add("experienceBackgroundAnimateRight");
+       /*  pic.style.left="100%"; */
       }
       counter++;
     }
-
-
   }
 
   createContent(){
@@ -168,11 +129,28 @@ export default class ExperienceSlider extends Component {
     return content;
   }
 
+  nextPicture(){
+    let nextPicture=undefined;
+    if(this.state.scrollDirection==="up"){
+      nextPicture= ((this.state.previousPicture-1)<0)?this.props.pics.length-1:this.state.previousPicture-1;
+    }else{
+      nextPicture= ((this.state.previousPicture+1)>this.props.pics.length-1)?0:this.state.previousPicture+1;
+    }
+    this.setState({actualPicture:nextPicture});
+  }
+
+  previousPicture(){
+    let nextPicture= ((this.state.previousPicture-1)<0)?this.props.pics.length-1:this.state.previousPicture-1;
+    /* let nextPicture= ((this.state.previousPicture+1)>this.props.pics.length-1)?0:this.state.previousPicture+1; */
+    this.setState({actualPicture:nextPicture});
+  }
+
   createDots(){
     let name=this.props.name;
     let dots = [];
     for(let i=0;i<this.props.pics.length;i++){
-      dots.push(<div className="experienceDots" id={`${name}dot${i}`} key={`${name}dot${i}`}></div>)
+      let extraClass=`experienceDots${(this.state.actualPicture===i)? ' actualDot':''}`;
+      dots.push(<div className={extraClass} id={`${name}dot${i}`} onClick={this.nextPicture} key={`${name}dot${i}`}></div>)
     }
     return (dots);
   }

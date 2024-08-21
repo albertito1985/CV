@@ -38,9 +38,6 @@ export default class SectionComponent extends Component {
     return null;
   }
 
-  componentDidMount(){
-  }
-
   componentDidUpdate(){
     let section = this.state.actualSection;
     ((typeof section!=="undefined")||section===0||section===this.contentArray.length) && this.checkAnimate();
@@ -71,7 +68,8 @@ export default class SectionComponent extends Component {
         this.removeClass(this.contentArray[lastSection].text, "myProcessSubtittleAnimation");
         this.setState({lastAnimated:"cerrando"});
       }else if(lastSection === "cerrando" && actualSection===this.contentArray.length){
-      }else if(lastSection === "oppening" && actualSection===this.contentArray.length){
+        /**Do nothing */
+      }else if((lastSection === "oppening"||lastSection === undefined)&& actualSection===this.contentArray.length){
         this.animateSection(this.contentArray[this.contentArray.length-1])
         this.setState({lastAnimated:"cerrando"});
       }else if(lastSection ==="cerrando" && actualSection===this.contentArray.length-1){
@@ -79,10 +77,13 @@ export default class SectionComponent extends Component {
         this.addClass("myProcessTexts", "myProcessTextsAnimation");
         this.addClass(this.contentArray[this.contentArray.length-1].text, "myProcessSubtittleAnimation");
         this.setState({lastAnimated:this.contentArray.length-1});
+      }else if(lastSection === "cerrando" && actualSection===false){
+        /**Do nothing */
       }else {
         if(!isNaN(lastSection)){
           this.unanimateSection(this.contentArray[lastSection]);
         };
+        
         this.addClass("myProcessTexts", "myProcessTextsAnimation");
         this.animateSection(this.contentArray[actualSection])
         this.setState({lastAnimated:actualSection});

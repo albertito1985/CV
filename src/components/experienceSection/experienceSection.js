@@ -14,7 +14,6 @@ export default class ExperienceSection extends Component {
     this.show=true
   }
   componentDidMount(){
-    console.log("experience section")
     /*TEMPORAL to make the sliders disapear */
    /*  setTimeout(()=>{
       this.setState({show:false});
@@ -30,7 +29,7 @@ export default class ExperienceSection extends Component {
             <div className="experienceSectionContent">
                 <div id="experience1">
                     <ExperienceSlider pics={experienceData.SquidFactor.pics} name={experienceData.SquidFactor.name} show={this.state.show} scrollPosition={this.props.configurationObject.scrollPosition}/>
-                    {/* <ExperienceInfo info={experienceData.SquidFactor} show={this.state.show}/> */}
+                    <ExperienceInfo info={experienceData.SquidFactor} show={this.state.show}/>
                 </div>
             
             </div>

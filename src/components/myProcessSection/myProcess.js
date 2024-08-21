@@ -18,6 +18,7 @@ export default class MyProcess extends Component {
         this.sectionsCofee=3;
         this.sectionsProcess=5;
         /*Variables*/
+        this.sectionNumber=undefined;
         this.cofeePath=undefined;
         this.intervalZoom=undefined;
         /*Binding this to the functions */
@@ -27,13 +28,15 @@ export default class MyProcess extends Component {
         this.sectionsTrigger=this.sectionsTrigger.bind(this);
         this.calculateSection=this.calculateSection.bind(this);
         this.updateCoffeeAnimation=this.updateCoffeeAnimation.bind(this);
+
     }
 
     static getDerivedStateFromProps(props,state) {
       state.scrollPosition=props.configurationObject.scrollPosition;
-      state.vh=props.configurationObject.vh
+      state.vh=props.configurationObject.vh;
       return null;
     }
+
     componentDidMount(){
       let myProcess = document.getElementsByClassName("myProcess")[0];   
       let myProcesscontent = document.getElementsByClassName("myProcessContent")[0];
@@ -41,19 +44,21 @@ export default class MyProcess extends Component {
       let percentagePerSection=this.state.vh/myProcessHeight;
       this.intervalZoom=this.maxZoom-this.startZoom;
       this.cofeePath=this.sectionsCofee*this.state.vh;
-      this.cofeeAnimation();
+      /* this.cofeeAnimation(); */
 
       /*Observer */
       const myProcessObserver = new IntersectionObserver(entries=>{
         if(entries[0].isIntersecting){
           myProcesscontent.classList.add("myProcessSticky");
-          document.addEventListener("scroll",this.scrollHandler);
         }else{
           myProcesscontent.classList.remove("myProcessSticky");
-          document.removeEventListener("scroll",this.scrollHandler);
         }
       },{threshold:percentagePerSection});
       myProcessObserver.observe(myProcess);
+    }
+    componentDidUpdate(){
+      this.cofeeAnimation(this.state.scrollPosition);
+      this.sectionsTrigger(this.state.scrollPosition);
     }
 
     componentWillUnmount(){
@@ -66,7 +71,7 @@ export default class MyProcess extends Component {
     }
 
     sectionsTrigger(scrollPosition){
-      this.setState({sectionNumber:this.calculateSection(scrollPosition)});
+      this.sectionNumber= this.calculateSection(scrollPosition);
     }
 
     calculateSection(scrollPosition){
@@ -84,6 +89,10 @@ export default class MyProcess extends Component {
       let scrollPercentage = this.calculateScrollPercentage();
       let newZoom=this.calculateZoom(scrollPercentage);
       let newOpacity=(100-scrollPercentage)+"%";
+      if(this.sectionNumber===undefined){
+        newZoom=this.startZoom;
+        newOpacity="100%";
+      }
       this.updateCoffeeAnimation(newZoom,newOpacity);
     }
 
@@ -111,7 +120,7 @@ export default class MyProcess extends Component {
     return (
       <div className="myProcess">
         <div className="myProcessContent">
-          <SectionComponent section={this.state.sectionNumber}/>
+          <SectionComponent section={this.sectionNumber}/>
           <div className="cofeeImages">
             <div className="holeImage">
             </div>

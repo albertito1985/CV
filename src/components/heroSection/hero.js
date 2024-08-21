@@ -6,8 +6,6 @@ export default class Hero extends Component {
   constructor(props){
     super(props);
     this.state={
-      up:0,
-      down:0
     }
     this.time=20;
     this.speed=10;

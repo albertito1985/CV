@@ -7,7 +7,6 @@
     flex-direction: row;
     justify-content: baseline;
     align-items: center;
-    
 }
 
 
@@ -22,21 +21,19 @@ background-size:100%;
 background-repeat:no-repeat;
 background-position: center;
 left:0;
-transition:left 1s ease;
+opacity:1;
+transition:left 1s ease, opacity 1s ease;
 }
 
 .experienceBackgroundAnimateLeft{
     left:-100%;
+    opacity:0;
 }
 
 .experienceBackgroundAnimateRight{
     left:100%;
+    opacity:0;
 }
-
-.experienceBackgroundAnimateActual{
-    left:0;
-}
-
 
 .experienceForeground{
     width:100%;
@@ -68,6 +65,7 @@ transition:left 1s ease;
     background-color:var(--Whites-Grayish);
     border-radius:100px;
     transition:background-color 0,5s ease-in-out;
+    z-index:1;
 }
 
 .actualDot{
@@ -75,13 +73,13 @@ transition:left 1s ease;
 }
 
 /* #squidFactorBack0{
-    
+    display:none
 }
 
 #squidFactorBack1{
-    left:100%;
+    display:none
 }
 
 #squidFactorBack2{
-   left:-100%;
+
 }  */
