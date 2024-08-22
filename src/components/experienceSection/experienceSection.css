@@ -1,7 +1,8 @@
 .experienceSection{
-    height:300vh;
+    height: 400vh;
     width:100%;
     position:relative;
+    background-color:var(--Darks-Dark);
 }
 
 .experienceSectionContent{
@@ -9,12 +10,22 @@
     height:100vh;
     width:100%;
     position:-webkit-sticky;
-    position:sticky;
     top:0;
+    position:sticky;
 }
 
-#experience1{
-    position:relative;
+.experienceSectionContentSticky{
+    position:sticky;
+}
+
+.experienceIndividual{
+    position:absolute;
     display:flex;
     flex-direction:row;
+    opacity:0;
+    transition: opacity 1s ease;
+}
+
+.experienceAnimate{
+    opacity:1;
 }

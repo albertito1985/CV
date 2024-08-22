@@ -8,13 +8,15 @@ export default class App extends Component {
     super(props);
       this.state = {
         loading:true,
-        scrollPosition:undefined
+        scrollPosition:undefined,
+        scrollDirection:undefined
       }
     this.scrollHandler=this.scrollHandler.bind(this);
   }
 
 static getDerivedStateFromProps(props,state) {
     state.scrollPosition=window.pageYOffset;
+    state.scrollDirection = (state.scrollPosition>0)?"up":"down";
     return null;
  }
 
@@ -30,13 +32,15 @@ componentWillUnmount(){
 
 scrollHandler(){
   let newScrollPosition= window.pageYOffset;
-  this.setState({scrollPosition:newScrollPosition});
+  let scrollDirection=(this.state.scrollPosition>newScrollPosition)?"up":"down";
+  this.setState({scrollPosition:newScrollPosition,scrollDirection:scrollDirection});
 }
 
   render() {
     let configurationObject={
       scrollPosition:this.state.scrollPosition,
-      vh:document.documentElement.clientHeight || window.innerHeight || 0
+      vh:document.documentElement.clientHeight || window.innerHeight || 0,
+      scrollDirection:this.state.scrollDirection
     }
 
     return (

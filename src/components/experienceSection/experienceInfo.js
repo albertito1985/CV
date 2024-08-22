@@ -20,7 +20,7 @@ export default class ExperienceInfo extends Component {
   }
 
   animateText(){
-  animation=animation.bind(this);
+    animation=animation.bind(this);
     if(this.props.show!==this.show){
       animation();
       this.show=!this.show;
@@ -29,9 +29,9 @@ export default class ExperienceInfo extends Component {
     function animation(){
       let experienceInfoOuter=document.getElementById(`experienceInfoOuter${this.props.info.name}`);
       setTimeout(()=>{
-        console.log(experienceInfoOuter.classList.toggle("experienceInfoOuterAnimation"));
+        experienceInfoOuter.classList.toggle("experienceInfoOuterAnimation");
       },1000);
-      this.setState({showing:!this.props.showing});
+      /* this.setState({showing:!this.props.showing}); */
     }  
   }
 

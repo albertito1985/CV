@@ -8,15 +8,15 @@ export default class ExperienceSlider extends Component {
       previousPicture:0,
       actualPicture:0,
       scrollPosition:undefined,
-      scrollDirection:0
     };
     this.show=false;
     this.createContent=this.createContent.bind(this);
     this.assignPics=this.assignPics.bind(this);
     this.createDots=this.createDots.bind(this);
-    this.animatePictures=this.animatePictures.bind(this);
+    this.animateSlider=this.animateSlider.bind(this);
     this.nextPicture=this.nextPicture.bind(this);
-    this.previousPicture=this.previousPicture.bind(this);
+    this.animateSection=this.animateSection.bind(this);
+    this.startPosition=this.startPosition.bind(this);
   }
 
   static getDerivedStateFromProps(props,state){
@@ -29,17 +29,50 @@ export default class ExperienceSlider extends Component {
 
   componentDidMount(){
     this.assignPics();
+
+    /* this.interval = setInterval(()=>{
+      this.nextPicture()
+    },3000); */
+  }
+
+  componentWillUnmount(){
+    /* clearInterval(this.interval); */
   }
 
   componentDidUpdate(){
-    (!isNaN(this.state.actualPicture)) && this.animatePictures();
+    this.animateSlider();
+    this.animateSection();
   }
 
-  animatePictures(){
+  animateSection(){
+    animation=animation.bind(this);
+    if(this.props.show!==this.show){
+      animation();
+      this.show=!this.show;
+    };
+
+    function animation(){
+      let experienceSliser=document.getElementById(`experienceSlider${this.props.name}`);
+      experienceSliser.classList.toggle("experienceSliderSectionAnimation");
+      if(this.props.show){
+        this.interval = setInterval(()=>{
+          this.nextPicture()
+        },3000); 
+      }else{
+        clearInterval(this.interval);
+        this.startPosition();
+        this.setState({
+          previousPicture:0,
+          actualPicture:0,
+        })
+      }
+    }  
+  }
+
+  animateSlider(){
     if(this.state.previousPicture===this.state.actualPicture){
       return null;
     }
-    console.log({previous:this.state.previousPicture,actual:this.state.actualPicture});
     let length=this.props.pics.length;
     /**Animate actual picture to the middle */
     let actualPicture= document.getElementById(`${this.props.name}Back${this.state.actualPicture}`);
@@ -51,23 +84,13 @@ export default class ExperienceSlider extends Component {
     actualPicture.classList.remove("experienceBackgroundAnimateRight");
 
     /**Animate the other pictures depending on the direction of the scrolling*/
-      let leftIndex = (this.state.actualPicture-1<0)?length-1:this.state.actualPicture-1;
-      let rightIndex = (this.state.actualPicture+1>=length)?0:this.state.actualPicture+1;
-      let LeftContainer= document.getElementById(`${this.props.name}Back${leftIndex}`);
-      let rightContainer= document.getElementById(`${this.props.name}Back${rightIndex}`);
+    let leftIndex = (this.state.actualPicture-1<0)?length-1:this.state.actualPicture-1;
+    let rightIndex = (this.state.actualPicture+1>=length)?0:this.state.actualPicture+1;
+    let rightContainer= document.getElementById(`${this.props.name}Back${rightIndex}`);
       
-    if(this.state.scrollDirection==="up"){
-      previousPicture.classList.add("experienceBackgroundAnimateRight");
-      /* previousPicture.style.visibility="hidden"; */
-      /* LeftContainer.style.visibility="hidden"; */
-      LeftContainer.classList.remove("experienceBackgroundAnimateRight");
-      LeftContainer.classList.add("experienceBackgroundAnimateLeft");
-    }else{
       previousPicture.classList.add("experienceBackgroundAnimateLeft");
-      /* rightContainer.style.visibility="hidden"; */
       rightContainer.classList.remove("experienceBackgroundAnimateLeft");
       rightContainer.classList.add("experienceBackgroundAnimateRight");
-    }
     this.setState({previousPicture:this.state.actualPicture});
   }
 
@@ -92,9 +115,19 @@ export default class ExperienceSlider extends Component {
         }
       }
     }
+    this.startPosition();
+  }
+
+  startPosition(){
     /*Start position */
     let counter = this.props.pics.length-1;
     let assigning = "left";
+    for(let i=0;i<this.props.pics.length;i++){
+      let pic = document.getElementById(`${this.props.name}Back${i}`);
+      pic.classList.remove("experienceBackgroundAnimateLeft");
+      pic.classList.remove("experienceBackgroundAnimateRight");
+    }
+
     for(let i=0;i<this.props.pics.length;i++){
       if(counter===this.props.pics.length){
         counter=0;
@@ -104,13 +137,17 @@ export default class ExperienceSlider extends Component {
       if(counter=== 0){
         /**Do nothing */
       }else if(assigning==="left"){
-        /* pic.style.visibility = "hidden"; */
         pic.classList.add("experienceBackgroundAnimateLeft");
-        /* pic.style.left="-100%"; */
+        pic.classList.add("experienceBackgroundNoTransition");
+        setTimeout(()=>{
+          pic.classList.remove("experienceBackgroundNoTransition");
+        },1)
       }else if(assigning==="right"){
-        /* pic.style.visibility = "hidden"; */
         pic.classList.add("experienceBackgroundAnimateRight");
-       /*  pic.style.left="100%"; */
+        pic.classList.add("experienceBackgroundNoTransition");
+        setTimeout(()=>{
+          pic.classList.remove("experienceBackgroundNoTransition");
+        },1)
       }
       counter++;
     }
@@ -130,18 +167,7 @@ export default class ExperienceSlider extends Component {
   }
 
   nextPicture(){
-    let nextPicture=undefined;
-    if(this.state.scrollDirection==="up"){
-      nextPicture= ((this.state.previousPicture-1)<0)?this.props.pics.length-1:this.state.previousPicture-1;
-    }else{
-      nextPicture= ((this.state.previousPicture+1)>this.props.pics.length-1)?0:this.state.previousPicture+1;
-    }
-    this.setState({actualPicture:nextPicture});
-  }
-
-  previousPicture(){
-    let nextPicture= ((this.state.previousPicture-1)<0)?this.props.pics.length-1:this.state.previousPicture-1;
-    /* let nextPicture= ((this.state.previousPicture+1)>this.props.pics.length-1)?0:this.state.previousPicture+1; */
+    let nextPicture= ((this.state.previousPicture+1)>this.props.pics.length-1)?0:this.state.previousPicture+1;
     this.setState({actualPicture:nextPicture});
   }
 
@@ -153,12 +179,6 @@ export default class ExperienceSlider extends Component {
       dots.push(<div className={extraClass} id={`${name}dot${i}`} onClick={this.nextPicture} key={`${name}dot${i}`}></div>)
     }
     return (dots);
-  }
-
-  calculateSection(scrollPosition){
-    let actualSection = (Math.floor(scrollPosition/this.vh));
-    let validatedSection = ((actualSection-this.sectionsCofee)>-1 && (actualSection-this.sectionsCofee)<this.sectionsProcess+1)?actualSection-this.sectionsCofee:false;
-    return validatedSection;
   }
 
   render() {

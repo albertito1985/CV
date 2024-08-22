@@ -7,8 +7,13 @@
     flex-direction: row;
     justify-content: baseline;
     align-items: center;
+    left:-100%;
+    transition: left 1s ease;
 }
 
+.experienceSliderSectionAnimation{
+    left:0;
+}
 
 .experienceBackground{
 position:absolute;
@@ -25,6 +30,10 @@ opacity:1;
 transition:left 1s ease, opacity 1s ease;
 }
 
+.experienceBackgroundNoTransition{
+    transition: none;
+}
+
 .experienceBackgroundAnimateLeft{
     left:-100%;
     opacity:0;
@@ -36,11 +45,13 @@ transition:left 1s ease, opacity 1s ease;
 }
 
 .experienceForeground{
+    position:relative;
     width:100%;
     height:65%;
     display:flex;
     flex-direction: column;
     justify-content: center;
+    align-Items:center;
     background-image: url;
     background-repeat:no-repeat;
     background-position: center;
@@ -71,6 +82,8 @@ transition:left 1s ease, opacity 1s ease;
 .actualDot{
     background-color:var(--Darks-Dark);
 }
+
+
 
 /* #squidFactorBack0{
     display:none

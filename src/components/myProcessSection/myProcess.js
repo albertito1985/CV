@@ -22,7 +22,6 @@ export default class MyProcess extends Component {
         this.cofeePath=undefined;
         this.intervalZoom=undefined;
         /*Binding this to the functions */
-        this.scrollHandler=this.scrollHandler.bind(this);
         this.cofeeAnimation=this.cofeeAnimation.bind(this);
         this.calculateZoom=this.calculateZoom.bind(this);
         this.sectionsTrigger=this.sectionsTrigger.bind(this);
@@ -44,7 +43,6 @@ export default class MyProcess extends Component {
       let percentagePerSection=this.state.vh/myProcessHeight;
       this.intervalZoom=this.maxZoom-this.startZoom;
       this.cofeePath=this.sectionsCofee*this.state.vh;
-      /* this.cofeeAnimation(); */
 
       /*Observer */
       const myProcessObserver = new IntersectionObserver(entries=>{
@@ -57,15 +55,6 @@ export default class MyProcess extends Component {
       myProcessObserver.observe(myProcess);
     }
     componentDidUpdate(){
-      this.cofeeAnimation(this.state.scrollPosition);
-      this.sectionsTrigger(this.state.scrollPosition);
-    }
-
-    componentWillUnmount(){
-      document.removeEventListener("scroll",this.scrollHandler);
-    }
-
-    scrollHandler(){
       this.cofeeAnimation(this.state.scrollPosition);
       this.sectionsTrigger(this.state.scrollPosition);
     }

@@ -9,9 +9,14 @@ import SquidFore1 from './../../images/Experience/squidFactor/foreground1.svg';
 import SquidFore2 from './../../images/Experience/squidFactor/foreground2.png';
 import SquidBack2 from './../../images/Experience/squidFactor/background2.svg';
 import ImageRoller from './imageRoller';
-import Squidfore3Moving from './../../images/Experience/squidFactor/moving1.png'
-import Squidfore3Static from './../../images/Experience/squidFactor/static1.png';;
-
+import Squidfore3Moving from './../../images/Experience/squidFactor/moving1.png';
+import Squidfore3Static from './../../images/Experience/squidFactor/static1.png';
+import mindtempLogo from './../../images/Experience/mindtemp/MindtempLogoWhite.svg';
+import mindtempFore1 from './../../images/Experience/mindtemp/MindtempLogoColor.svg';
+import mindtempBack2 from './../../images/Experience/mindtemp/mindtempBack2.svg';
+import mindtempFore3static from './../../images/Experience/mindtemp/screen1.png';
+import mindtempFore3moving from './../../images/Experience/mindtemp/webContent.png';
+import mindtempFore2 from './../../images/Experience/mindtemp/mobileMockup.png';
 
 let experienceData = {
     TIBSI: {
@@ -61,7 +66,7 @@ let experienceData = {
             },
         ]
     },SquidFactor:{
-        name:"squidFactor",
+        name:"SquidFactor",
         logo:SquidLogo,
         project: "Squidfactor’s webapp",
         role:"UI consultant",
@@ -84,7 +89,11 @@ let experienceData = {
                     }
             },{
                 background:
-                    {pic:SquidBack2},
+                    {pic:SquidBack2,
+                        style:[{
+                            name:"backgroundSize",
+                            value:"85%",}]
+                    },
                 foreground:
                     {pic:SquidFore2}
             },{
@@ -92,7 +101,43 @@ let experienceData = {
                     {pic:"none"},
                 foreground:
                     {type:"component",
-                    pic:<ImageRoller moving={Squidfore3Moving} fixed={Squidfore3Static} name="squidFactor" number="3"/>}
+                    pic:<ImageRoller moving={Squidfore3Moving} fixed={Squidfore3Static} name="squidFactor" time="5000" number="3"/>}
+            },
+        ]
+    },Mindtemp:{
+        name:"Mindtemp",
+        logo:mindtempLogo,
+        project: "Mindtemps App and Website",
+        role:"In house UX/UI/Graphic designer",
+        description:"In this experience I first redesigned Mindtemp app to optimize its usability in several releases. I remade their website according to the companies requirements. And I redisigned internal documents and presentations. Important to mention regarding the website is that the company required that the pictures had one color background as part of their brand.",
+        comment:"Contact me to have a personal recommendation from this project.",
+        links: {
+            type:"prototype",
+            link:"https://www.figma.com/proto/4eXcIPjSjiXQ0jLk9dMdiQ/Mindtemp?page-id=4%3A156&node-id=727-18452&viewport=255%2C875%2C0.03&t=YTP70f90b7HYJ8Sa-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=727%3A18452"
+        },
+        numberOfPics:3,
+        pics: [
+            {
+                background:
+                    {pic:"none"},
+                foreground:
+                    {pic:mindtempFore1,
+                    style:[{
+                        name:"backgroundSize",
+                        value:"70%"}]
+                    }
+            },{
+                background:
+                    {pic:"none"},
+                    foreground:
+                    {type:"component",
+                    pic:<ImageRoller moving={mindtempFore3moving} movingStyle={{transition:"background-position 6s linear"}}fixed={mindtempFore3static} name="mindtemp" time="7000" number="3"/>}
+                
+            },{
+                background:
+                    {pic:mindtempBack2},
+                foreground:
+                    {pic:mindtempFore2}
             },
         ]
     }
