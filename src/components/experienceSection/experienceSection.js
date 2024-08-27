@@ -49,7 +49,6 @@ export default class ExperienceSection extends Component {
     this.containerSize = experienceSection.getBoundingClientRect().height;
     this.sectionsQuantity = Object.keys(experienceData).length;
     this.containerPosition = experienceSection.getBoundingClientRect().y+window.scrollY;
-    /* this.showFirstSection(); */
     this.animateSection(this.state.sectionNumber,this.sectionNumber);
   }
 

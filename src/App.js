@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Hero from './components/heroSection/hero';
 import MyProcess from './components/myProcessSection/myProcess';
 import ExperienceSection from './components/experienceSection/experienceSection';
+import AboutMe from './components/aboutMe/aboutMe';
+import ContactMe from './components/contactMe/contactMe';
 
 export default class App extends Component {
   constructor(props){
@@ -51,8 +53,11 @@ scrollHandler(){
         <Loading/>: */
         <div>
           <Hero/>
-          {/* <MyProcess configurationObject={configurationObject} /> */}
+          
           <ExperienceSection configurationObject={configurationObject}/>
+          <MyProcess configurationObject={configurationObject} />
+          <AboutMe/>
+          <ContactMe/>
         </div>}
       
     </div>

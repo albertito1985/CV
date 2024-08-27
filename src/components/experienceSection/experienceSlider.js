@@ -176,7 +176,7 @@ export default class ExperienceSlider extends Component {
     let dots = [];
     for(let i=0;i<this.props.pics.length;i++){
       let extraClass=`experienceDots${(this.state.actualPicture===i)? ' actualDot':''}`;
-      dots.push(<div className={extraClass} id={`${name}dot${i}`} onClick={this.nextPicture} key={`${name}dot${i}`}></div>)
+      dots.push(<div className={extraClass} id={`${name}dot${i}`} key={`${name}dot${i}`}></div>)
     }
     return (dots);
   }

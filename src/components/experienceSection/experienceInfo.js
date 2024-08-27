@@ -10,6 +10,7 @@ export default class ExperienceInfo extends Component {
     this.show=false
     this.addLogga=this.addLogga.bind(this);
     this.animateText=this.animateText.bind(this);
+    this.reDirect=this.reDirect.bind(this);
   }
   
   componentDidMount(){
@@ -40,6 +41,12 @@ export default class ExperienceInfo extends Component {
     container.style.backgroundImage = `url(${this.props.info.logo})`;
   }
 
+  reDirect(){
+    window.location.replace(this.props.info.links.link);
+    
+  }
+
+
   render() {
     return (
       <div className="experienceInfo">
@@ -63,7 +70,7 @@ export default class ExperienceInfo extends Component {
               <p>{this.props.info.description}</p>
             </div>
             <div className="experienceLinksContainer">
-              <Button label={"To the prototype"}/>
+              <Button label={"To the prototype"} link={this.props.info.links.link}/>
             </div>
           </div>
           <div className="experienceCommentContainer">

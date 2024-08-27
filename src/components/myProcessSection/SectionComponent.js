@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './sectionComponent.css';
-import requirements from'../../videos/requirements.webm';
-import sketching from'../../videos/sketching.webm';
-import prototyping from'../../videos/prototyping.webm';
-import implementing from'../../videos/implementing.webm';
-import evaluating from'../../videos/evaluating.webm';
+import requirements from'../../videos/requirements.mp4';
+import sketching from'../../videos/sketching.mp4';
+import prototyping from'../../videos/prototyping.mp4';
+import implementing from'../../videos/implementing.mp4';
+import evaluating from'../../videos/evaluating.mp4';
 
 
 export default class SectionComponent extends Component {

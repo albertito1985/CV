@@ -13,3 +13,7 @@ div.buttonComponent:hover{
     background-color:var(--Darks-Dark);
     border:1px solid var(--Normals-White);
 }
+
+.buttonLink{
+    text-decoration: none;
+}

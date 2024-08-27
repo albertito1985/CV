@@ -4,7 +4,7 @@
     width:100%;
     display:flex;
     flex-direction: column;
-    background:var(--Gradient);
+    background:var(--Darks-Dark);
 }
 
 .myProcess h1{

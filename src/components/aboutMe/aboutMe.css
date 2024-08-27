@@ -1,0 +1,100 @@
+.aboutMeTrack{
+    height:150vh;
+    width:100%;
+}
+.aboutMe{
+    position:sticky;
+    top:0;
+    height: 101vh;
+    width:100%;
+    background-image:url('../../images/aboutMe.JPG');
+    background-position:center;
+    background-size:120%;
+    display: flex;
+    flex-direction: row;
+    background-attachment: fixed;
+}
+
+.aboutMe li{
+    list-style-type: none;
+}
+
+.aboutMeItems{
+    position:relative;
+    width:50%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity:0;
+    transition:opacity 2s ease;
+}
+
+.aboutMeItemsContent{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:baseline;
+    gap:30px;
+}
+
+#aboutMeItemsContentRight{
+    height:20vw;
+    aspect-ratio: 1 /1;
+}
+
+#aboutMeItemsContentLeft{
+    display:block;
+    height:100vh;
+    margin-top:50%;
+
+}
+
+.aboutMeContentImage{
+    position:absolute;
+    height:20vw;
+    aspect-ratio: 1 /1;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    opacity:0;
+    transition:opacity 1s ease;
+}
+
+.aboutMe h2{
+    font-family: "Krona One";
+    font-size:2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color:var(--Normals-White);
+    padding-bottom:30px;
+}
+
+#aboutMeitem-1{
+    background-image:url("../../images/Liu.svg");
+    
+}
+
+#aboutMeitem-2{
+    background-image:url("../../images/personality.svg");
+}
+
+#aboutMeitem-3{
+    background-image:url("../../images/world.svg");
+}
+
+#aboutMeitem-4{
+    background-image:url("../../images/person.svg");
+}
+
+
+.aboutMeImageShow{
+    opacity:1;
+}
+
+.aboutMeItemsShow{
+    opacity:1
+}

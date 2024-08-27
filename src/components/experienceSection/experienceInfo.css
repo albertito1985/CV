@@ -9,6 +9,7 @@
     justify-content: center;
 }
 
+
 .experienceInfoOuter{
     width:80%;
     height:80vh;
@@ -31,7 +32,7 @@
 
 .experienceInfo h2{
     font-family: "Krona One";
-    font-size:31px;
+    font-size:2rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -40,7 +41,7 @@
 
 .experienceInfo p{
     font-family: Inter;
-    font-size: 19px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 150;
     line-height: normal;
@@ -65,4 +66,8 @@
     font-family:'Inter';
     padding-top:20px;
     border-top:1px solid var(--Normals-White);
+}
+
+.experienceDescriptionContainer a{
+    color:white;
 }

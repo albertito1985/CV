@@ -1,0 +1,19 @@
+.aboutMeCarrusell{
+    height:100px;
+    width:100%;
+    position:absolute;
+    bottom:50px;
+}
+
+.knowledgeIcon{
+    background-size:contain;
+    background-position: center;
+    background-repeat:no-repeat;
+    height:100px;
+    width:100px;
+}
+
+.hireMe{
+    display:flex;
+    flex-direction: row;
+}

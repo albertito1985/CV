@@ -26,7 +26,7 @@
 
 .videoMyProcess{
     position:relative;
-    height:100vh;
+    min-height:100vh;
     min-width:100%;
     z-index:-1;
     overflow:hidden;
