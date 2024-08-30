@@ -93,7 +93,7 @@ export default class ExperienceSection extends Component {
      divsArray.push(
       <div className="experienceIndividual" id={`experience${index}`} key={`experience${index}`}>
           <ExperienceSlider pics={experienceData[key].pics} name={experienceData[key].name} show={this.state.sectionNumber===index} scrollPosition={this.props.configurationObject.scrollPosition}/>
-          <ExperienceInfo info={experienceData[key]} show={this.state.sectionNumber===index}/>
+          {/* <ExperienceInfo info={experienceData[key]} show={this.state.sectionNumber===index}/> */}
       </div>)
     });
     return divsArray;

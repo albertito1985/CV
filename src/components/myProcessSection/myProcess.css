@@ -1,6 +1,6 @@
 .myProcess{
     position:relative;
-    height:800vh;
+    height:600vh;
     width:100%;
     display:flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
     background-position: center;
     background-size: 150%;
     top:0;
-    opacity:100;
+    opacity:1;
 }
 
 .holeImage{

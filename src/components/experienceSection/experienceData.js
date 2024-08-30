@@ -70,7 +70,7 @@ let experienceData = {
         logo:SquidLogo,
         project: "Squidfactor’s webapp",
         role:"UI consultant",
-        description:<>In this project I remade the UI of the Squidfactor’s webapp since the previous version was not optimal and the owners wanted a more gamified concept. Worth to mention is that my resposibility of the project was only the UI and not the graphic design since they have an in house graphic designer. The client was pleased with my work as you can see <a href='https://www.linkedin.com/posts/johanranstam_kudos-aemverfaemrvaeuntan-activity-7161305831026606080-I1wS?utm_source=share&utm_medium=member_desktop'> here</a>.</>,
+        description:<>In this project I remade the UI of the Squidfactor’s webapp since the previous version was not optimal and the owners wanted a more gamified concept. Worth to mention is that my resposibility of the project was only the UI and not the graphic design since they have an in house graphic designer. The client was pleased with my work as you can see <a target="_blank" href='https://www.linkedin.com/posts/johanranstam_kudos-aemverfaemrvaeuntan-activity-7161305831026606080-I1wS?utm_source=share&utm_medium=member_desktop'> here</a>.</>,
         comment:null,
         links: {
             type:"prototype",

@@ -15,19 +15,19 @@ export default class MyProcess extends Component {
         this.startZoom=150;
         this.maxZoom=1500;
         /*as it is configured you can conly choose a total of 8 sections*/
-        this.sectionsCofee=3;
+        this.sectionsCofee=5;
         this.sectionsProcess=5;
         /*Variables*/
         this.sectionNumber=undefined;
         this.cofeePath=undefined;
         this.intervalZoom=undefined;
+        this.coffePosition=undefined;
         /*Binding this to the functions */
         this.cofeeAnimation=this.cofeeAnimation.bind(this);
         this.calculateZoom=this.calculateZoom.bind(this);
         this.sectionsTrigger=this.sectionsTrigger.bind(this);
         this.calculateSection=this.calculateSection.bind(this);
         this.updateCoffeeAnimation=this.updateCoffeeAnimation.bind(this);
-
     }
 
     static getDerivedStateFromProps(props,state) {
@@ -37,22 +37,10 @@ export default class MyProcess extends Component {
     }
 
     componentDidMount(){
-      let myProcess = document.getElementsByClassName("myProcess")[0];   
-      let myProcesscontent = document.getElementsByClassName("myProcessContent")[0];
-      let myProcessHeight= myProcess.clientHeight;
-      let percentagePerSection=this.state.vh/myProcessHeight;
+      let myProcess= document.getElementsByClassName("myProcess")[0];
       this.intervalZoom=this.maxZoom-this.startZoom;
-      this.cofeePath=this.sectionsCofee*this.state.vh;
-
-      /*Observer */
-      const myProcessObserver = new IntersectionObserver(entries=>{
-        if(entries[0].isIntersecting){
-          myProcesscontent.classList.add("myProcessSticky");
-        }else{
-          myProcesscontent.classList.remove("myProcessSticky");
-        }
-      },{threshold:percentagePerSection});
-      myProcessObserver.observe(myProcess);
+      this.cofeePath=this.sectionsCofee*(this.state.vh/2);
+      this.coffePosition = myProcess.getBoundingClientRect().y+window.scrollY;
     }
     componentDidUpdate(){
       this.cofeeAnimation(this.state.scrollPosition);
@@ -64,13 +52,14 @@ export default class MyProcess extends Component {
     }
 
     calculateSection(scrollPosition){
-      let actualSection = (Math.floor(scrollPosition/this.state.vh));
-      let validatedSection = ((actualSection-this.sectionsCofee)>-1 && (actualSection-this.sectionsCofee)<this.sectionsProcess+1)?actualSection-this.sectionsCofee:false;
+      let actualSection = (Math.floor((scrollPosition-this.coffePosition)/(this.state.vh/2)));
+      let startSection = this.sectionsCofee-1;
+      let validatedSection = ((actualSection-startSection)>-1 && (actualSection-startSection)<this.sectionsProcess+1)?actualSection-startSection:false;
       return validatedSection;
     }
 
     calculateScrollPercentage(){
-      return ((this.state.scrollPosition-this.state.vh)*100)/(this.cofeePath-this.state.vh)
+      return ((this.state.scrollPosition-this.coffePosition)*100)/(this.cofeePath-(this.state.vh/2))
     }
 
     cofeeAnimation(){

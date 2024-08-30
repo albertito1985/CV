@@ -24,8 +24,6 @@ static getDerivedStateFromProps(props,state) {
 
 componentDidMount(){
   document.addEventListener("scroll",this.scrollHandler);
-  /*Turns on the loading screen */
-    /* setTimeout(()=>{this.setState({loading:false})}, 5000);  Taken away for testing reasons*/
 }
 
 componentWillUnmount(){
@@ -49,16 +47,13 @@ scrollHandler(){
       <div className="App">
         <header className="App-header">
         </header>
-        {/* this.state.loading?
-        <Loading/>: */
         <div>
-          <Hero/>
-          
+          {/* <Hero/> */}
           <ExperienceSection configurationObject={configurationObject}/>
-          <MyProcess configurationObject={configurationObject} />
+          {/* <MyProcess configurationObject={configurationObject} />
           <AboutMe/>
-          <ContactMe/>
-        </div>}
+          <ContactMe/> */}
+        </div>
       
     </div>
     )

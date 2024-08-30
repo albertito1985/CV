@@ -52,7 +52,7 @@ importAll(r){
         ssr={true} // means to render carousel on server-side.
         infinite={true}
         autoPlay={this.props.deviceType !== "mobile" ? true : false}
-        autoPlaySpeed={500}
+        autoPlaySpeed={2000}
         keyBoardControl={true}
         customTransition="transform 2000ms linear"
         transitionDuration={2000}
@@ -60,6 +60,7 @@ importAll(r){
         removeArrowOnDeviceType={false}
         deviceType={this.props.deviceType}
         itemClass="carouselItem"
+        rewindWithAnimation={false}
         >
         {this.createContent()}
         </Carousel>;

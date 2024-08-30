@@ -2,7 +2,7 @@
     height:100vh;
     width:100%;
     position:relative;
-    background: var(--Gradient);
+    background: var(--Darks-Dark);
     display:flex;
     flex-direction: column;
     align-items: center;

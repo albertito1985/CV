@@ -65,8 +65,13 @@ h3 {
 .AccordionContent {
   overflow: hidden;
   font-size: 1rem;
-  border-bottom:1px solid var(--Normals-White);
   color:var(--Normals-White);
+  border-bottom:5px solid var(--Purple);
+  /* border-bottom:1px solid var(--Normals-White); */
+ /*  border-image:var(--Gradient) 1; */
+
+
+
   /* color: var(--mauve-11); */
   /* background-color: var(--mauve-2); */
 }

@@ -21,3 +21,18 @@
 .WelcomeMessage>*{
     margin:0;
 }
+
+.loading h3{
+    font-size:2rem;
+    color: var(--Normals-White);
+}
+
+.loading h1{
+    font-family: Halant;
+    font-size: 5rem;
+    font-style: normal;
+    font: sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--Normals-White);
+}

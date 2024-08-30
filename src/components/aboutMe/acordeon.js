@@ -50,7 +50,7 @@ const AccordionDemo = ({changeImage}) => (
     </Accordion.Item>
     <Accordion.Item className="AccordionItem"  value="item-4" >
       <AccordionTrigger >About me</AccordionTrigger>
-      <AccordionContent>I live with my family in Åkersberga, Stockholm. In my free time I enjoy spending time with my family, reading, playing padel and football.</AccordionContent>
+      <AccordionContent><>I was born in Peru and moved to Sweden at 21. Now I live with my family in Åkersberga, Stockholm, where I enjoy spending time with them, reading, playing padel and football.<br/><br/>As a designer I have no particular style since I feel it is important to reflect the client brand's personality and not mine.</></AccordionContent>
     </Accordion.Item>
   </Accordion.Root>
 );

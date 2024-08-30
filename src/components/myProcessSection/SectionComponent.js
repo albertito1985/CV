@@ -147,13 +147,14 @@ export default class SectionComponent extends Component {
             </div>
         <div className="myProcessTexts" id="myProcessTexts">
           <div className="myProcessTextInner">
+          
             <h1>My Process</h1>
             <div className="processText">
               <h2 className="myProcessSubtittle" id="textRequirements">Gathering requirements</h2>
               <h2 className="myProcessSubtittle" id="textSketching">Sketching</h2>
-              <h2 className="myProcessSubtittle" id="textPrototyping">prototyping</h2>
-              <h2 className="myProcessSubtittle" id="textImplementing">implementing</h2>
-              <h2 className="myProcessSubtittle" id="textEvaluating">evaluating</h2>
+              <h2 className="myProcessSubtittle" id="textPrototyping">Prototyping</h2>
+              <h2 className="myProcessSubtittle" id="textImplementing">Implementing</h2>
+              <h2 className="myProcessSubtittle" id="textEvaluating">Evaluating</h2>
             </div>
           </div>
         </div>

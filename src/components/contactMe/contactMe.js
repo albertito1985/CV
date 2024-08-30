@@ -33,7 +33,7 @@ aboutMeObserver.observe(contactMe);
                     <MdEmail/><a href="mailto:anulo@live.se">anulo@live.se</a>
                 </div>
                 <div className="contactItems linkedin">
-                    <FaLinkedin /><a href="https://www.linkedin.com/in/albertonunezloayza/">/albertonunezloayza</a>
+                    <FaLinkedin /><a target="_blank" href="https://www.linkedin.com/in/albertonunezloayza/">/albertonunezloayza</a>
                 </div>
             </div>
         </div>

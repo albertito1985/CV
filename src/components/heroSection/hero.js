@@ -17,9 +17,9 @@ export default class Hero extends Component {
     this.animationName(container1,"Up");
     this.animationName(container2,"Down");
 
-    var videoSize=document.getElementById("heroVideo").offsetHeight;
+    /* var videoSize=document.getElementById("heroVideo").offsetHeight;
     var heroSection = document.getElementById("hero");
-    heroSection.style.height=videoSize+"px";
+    heroSection.style.height=videoSize+"px"; */
   }
 
   animationName(container,direction){
@@ -44,12 +44,10 @@ export default class Hero extends Component {
   render() {
     return (        
         <div id="hero">
-          <video autoPlay muted loop id="heroVideo">
-            <source src={videoBackground} type="video/webm"/>
-          </video>
+            <video autoPlay muted loop id="heroVideo">
+              <source src={videoBackground} type="video/webm"/>
+            </video>
           <div className="namesBothlWrap">
-            
-            
             <div className="namesDownWrap">
               <div className="namesDown">
                   

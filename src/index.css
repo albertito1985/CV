@@ -1,8 +1,12 @@
 :root{
-  --Gradient: linear-gradient(90deg, #6322DE 0%, #2E809C 100%);
+  
+  
   --Normals-White: #FDF7FF;
   --Whites-Grayish:#D8CEE2;
   --Darks-Dark: #231926;
+  --Blueish:#2E809C;
+  --Purple:#6322DE;
+  --Gradient: linear-gradient(90deg, var(--Blueish) 0%, var(--Purple) 100%);
 }
 
 *,*::before,*::after{
