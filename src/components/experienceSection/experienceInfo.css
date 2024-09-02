@@ -70,10 +70,6 @@
 
     border-top:solid;
     border-image: var(--Gradient) 1;
-
-
-    
-    /* border-top:1px solid var(--Normals-White); */
     
 }
 
@@ -81,54 +77,57 @@
     color:white;
 }
 
-@media screen and (max-width: 900px) and (max-height: 900px){
+@media screen and (max-width: 1000px) and (max-height: 900px){
+    .experienceInfo{
+        height:50vh;
+        width:100%;
+    }
+
+    
     .experienceInfoOuter{
-        height:90vh;
+        height:100%;
+        
+        justify-content: center;
+        align-items: center;
+    }
+    .experienceInfoInner{
+        gap:20px;
+    }
+
+    .experienceLoveContainer{
+        display:none;
+    }
+    .experienceInfo h2{
+        font-family: "Krona One";
+        font-size:1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color:var(--Normals-White);
+    }
+    .experienceCommentContainer{
+        display:none;
+    }
+
+    .experienceLoggaContainer{
+        display:none;
+    }
+
+    .experienceLinksContainer{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
   }
-  
-  
-  /* For Desktop View */
-  @media screen and (min-width: 1024px) {
-  
+
+  @media screen and (max-height: 750px){
+    .experienceLoggaContainer{
+        display:none;
+    }
+
+    .experienceInfoOuter{
+        padding:20px 0;
+        height:95vh;
+    }
   }
-  
-  /* For Tablet View */
-  @media screen and (min-device-width: 768px) 
-      and (max-device-width: 1024px) {
-  
-  }
-  
-  /* For Mobile Portrait View */
-  @media screen and (max-device-width: 480px) 
-      and (orientation: portrait) {
-  
-  }
-  
-  /* For Mobile Landscape View */
-  @media screen and (max-device-width: 640px) 
-      and (orientation: landscape) {
-  
-  }
-  
-  /* For Mobile Phones Portrait or Landscape View */
-  @media screen 
-      and (max-device-width: 640px) {
-  
-  }
-  
-  /* For iPhone 4 Portrait or Landscape View */
-  @media screen and (min-device-width: 320px) 
-      and (-webkit-min-device-pixel-ratio: 2) {
-  
-  }
-  
-  /* For iPhone 5 Portrait or Landscape View */
-  @media (device-height: 568px) 
-      and (device-width: 320px) 
-      and (-webkit-min-device-pixel-ratio: 2) {
-  
-  }
-  
-  /* For iPhone 6 and 6 plus Portrait or Landscape View */
-  

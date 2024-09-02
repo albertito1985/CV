@@ -11,6 +11,10 @@
 
 .videoMyProcessContainer{
     position:absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
     overflow:hidden;
     height:100vh;
     width:100%;
@@ -25,7 +29,7 @@
 }
 
 .videoMyProcess{
-    position:relative;
+    position:absolute;
     min-height:100vh;
     min-width:100%;
     z-index:-1;
@@ -91,3 +95,21 @@
     opacity:1;
     visibility:visible;
 }
+
+  @media screen and (max-width: 800px){
+    .myProcessTextInner h1{
+        font-size:2rem;
+    }
+    
+    .myProcessSubtittle{
+        font-size:1rem;
+    }
+
+    .myProcessTexts{
+        height:170px;
+    }
+
+    .myProcessTextInner{
+        padding:50px 50px;
+    }
+  }

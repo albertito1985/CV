@@ -11,6 +11,7 @@ h3 {
 .AccordionRoot {
   border-radius: 6px;
   width: 500px;
+
   /* background-color: var(--mauve-6); */
   /* box-shadow: 0 2px 10px var(--black-a4); */
 }
@@ -53,13 +54,6 @@ h3 {
   justify-content: space-between;
   font-size: 2rem;
   line-height: 1;
-  /* color: var(--violet-11); */
-  /* box-shadow: 0 1px 0 var(--mauve-6); */
-  /* background-color: white; */
-}
-
-.AccordionTrigger:hover {
-  /* background-color: var(--mauve-2); */
 }
 
 .AccordionContent {
@@ -67,14 +61,8 @@ h3 {
   font-size: 1rem;
   color:var(--Normals-White);
   border-bottom:5px solid var(--Purple);
-  /* border-bottom:1px solid var(--Normals-White); */
- /*  border-image:var(--Gradient) 1; */
-
-
-
-  /* color: var(--mauve-11); */
-  /* background-color: var(--mauve-2); */
 }
+
 .AccordionContent[data-state='open'] {
   animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
 }
@@ -87,7 +75,6 @@ h3 {
 }
 
 .AccordionChevron {
- /*  color: var(--violet-10); */
   transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
   width:40px;
   height:40px;
@@ -111,5 +98,15 @@ h3 {
   }
   to {
     height: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .AccordionTrigger {
+    font-size: 1.5rem;
+  }
+
+  .AccordionRoot{
+    width:100%;
   }
 }

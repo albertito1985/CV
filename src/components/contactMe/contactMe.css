@@ -68,3 +68,19 @@
 .spanLetsTalkAnimate{
     opacity:1;
 }
+
+
+@media screen and (max-width: 850px) {
+
+    .contactMeTittle h1{
+        font-size:3rem
+    }
+
+    .contactMeTittle{
+        gap:20px;
+    }
+
+    .contactItems a{
+        font-size:1rem
+    }
+}

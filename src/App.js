@@ -48,13 +48,12 @@ scrollHandler(){
         <header className="App-header">
         </header>
         <div>
-          {/* <Hero/> */}
+          <Hero/>
           <ExperienceSection configurationObject={configurationObject}/>
-          {/* <MyProcess configurationObject={configurationObject} />
+          <MyProcess configurationObject={configurationObject} />
           <AboutMe/>
-          <ContactMe/> */}
+          <ContactMe/>
         </div>
-      
     </div>
     )
   }

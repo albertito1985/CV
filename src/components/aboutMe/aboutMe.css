@@ -98,3 +98,51 @@
 .aboutMeItemsShow{
     opacity:1
 }
+
+
+@media screen and (max-width: 1300px){
+    
+    #aboutMeItemsRight{
+        display:none;
+    }
+
+    .aboutMe{
+        background-size:cover;
+    }
+
+    .aboutmeItemsWrap{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aboutMeItems{
+        width:80%;
+    }
+
+    .aboutMeItemsContent{
+        background-color:rgba(0,0,0,0.5);
+        padding:50px;
+        border-radius:5%;
+    }
+  }
+
+@media screen and (max-width: 900px) {
+    .aboutMeItems{
+        width:80%;
+    }
+
+    .hireMe{
+        width:100%;
+    }
+
+    .hireMe h2{
+        font-size:1.5rem;
+        text-align:center;
+        width:100%;
+    }
+
+    .aboutMeItemsContent{
+        width:100%;
+        padding:50px 20px ;
+    }
+}

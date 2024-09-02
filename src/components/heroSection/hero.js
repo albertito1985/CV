@@ -44,9 +44,11 @@ export default class Hero extends Component {
   render() {
     return (        
         <div id="hero">
+          <div className="heroVideoContainer">
             <video autoPlay muted loop id="heroVideo">
               <source src={videoBackground} type="video/webm"/>
             </video>
+          </div>
           <div className="namesBothlWrap">
             <div className="namesDownWrap">
               <div className="namesDown">

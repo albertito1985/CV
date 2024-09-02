@@ -51,10 +51,11 @@ export default class ExperienceInfo extends Component {
     return (
       <div className="experienceInfo">
         <div className="experienceInfoOuter" id={`experienceInfoOuter${this.props.info.name}`}>
-          <div className="experienceInfoInner">
-            <div className="experienceLoveContainer">
+        <div className="experienceLoveContainer">
               <p className="love" >Work I love</p>
             </div>
+          <div className="experienceInfoInner">
+            
             <div className={`experienceLoggaContainer ${this.props.info.name}`} id={`logga${this.props.info.name}`}>
             </div>
             <div className="experienceProjectContainer">

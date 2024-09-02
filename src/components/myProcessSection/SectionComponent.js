@@ -6,7 +6,6 @@ import prototyping from'../../videos/prototyping.mp4';
 import implementing from'../../videos/implementing.mp4';
 import evaluating from'../../videos/evaluating.mp4';
 
-
 export default class SectionComponent extends Component {
   constructor(props){
     super(props);
