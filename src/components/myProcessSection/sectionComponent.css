@@ -53,7 +53,7 @@
     display:flex;
     flex-direction: column;
     overflow:hidden;
-    width:calc(100%-200px);
+    width:100%;
     height:200px;
     padding:50px 100px;
 }
@@ -96,6 +96,31 @@
     visibility:visible;
 }
 
+#videoRequirements video{
+    background-image:url(../../images/posters/requirements.jpg);
+    background-size:cover;
+}
+
+#videoSketching video{
+    background-image:url(../../images/posters/sketching.jpg);
+    background-size:cover;
+}
+
+#videoPrototyping video{
+    background-image:url(../../images/posters/prototyping.jpg);
+    background-size:cover;
+}
+
+#videoImplementing video{
+    background-image:url(../../images/posters/implementing.jpg);
+    background-size:cover;
+}
+
+#videoEvaluating video{
+    background-image:url(../../images/posters/evaluating.jpg);
+    background-size:cover;
+}
+
   @media screen and (max-width: 800px){
     .myProcessTextInner h1{
         font-size:2rem;
@@ -110,6 +135,6 @@
     }
 
     .myProcessTextInner{
-        padding:50px 50px;
+        padding:50px 0 50px 30px;
     }
   }

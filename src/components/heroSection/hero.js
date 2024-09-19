@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './hero.css';
 import videoBackground from '../../videos/67358-521707474_medium.mp4';
+import { BsPhoneVibrate } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa";
 
 export default class Hero extends Component {
   constructor(props){
@@ -68,7 +71,20 @@ export default class Hero extends Component {
             </div>
           </div>
           <div className="logoCircle"><h1>Alberto Nuñez</h1></div>
-          
+          <div className="card">
+            {/* <div className="contactMeTittle"><span className="spanLetsTalk" id="lets"><h1>Let's</h1></span><span className="spanLetsTalk" id="talk"><h1>talk</h1></span></div> */}
+            <div className="contactInformation">
+                <div className="contactItems telephone">
+                    <BsPhoneVibrate/><a href="tel:0737296127">073 72 96 127</a>
+                </div>
+                <div className="contactItems email">
+                    <MdEmail/><a href="mailto:anulo@live.se">anulo@live.se</a>
+                </div>
+                <div className="contactItems linkedin">
+                    <FaLinkedin /><a target="_blank" href="https://www.linkedin.com/in/albertonunezloayza/">/albertonunezloayza</a>
+                </div>
+            </div>
+          </div>
         </div>
     )
   }

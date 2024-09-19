@@ -3,10 +3,13 @@
   
   --Normals-White: #FDF7FF;
   --Whites-Grayish:#D8CEE2;
+  --Whites-Dark: #A9A3AD;
   --Darks-Dark: #231926;
+  --Darks-LighterDark: #3F3B44;
   --Blueish:#2E809C;
   --Purple:#6322DE;
   --Gradient: linear-gradient(90deg, var(--Blueish) 0%, var(--Purple) 100%);
+  --DarkGradient: linear-gradient(90deg, var(--Darks-LighterDark) 0%, var(--Darks-Dark) 100%);
 }
 
 *,*::before,*::after{
@@ -47,4 +50,13 @@ body {
 .section {
   height:1wh;
   
+}
+
+.me{
+  width:100%;
+  height:50vh;
+  background-image:url("./images/aboutMe.jpg");
+  background-size:cover;
+  background-position:center;
+  background-attachment: fixed;
 }

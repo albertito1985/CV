@@ -26,6 +26,7 @@ export default class ExperienceSection extends Component {
     this.sectionsTrigger=this.sectionsTrigger.bind(this);
     this.animateSection=this.animateSection.bind(this);
     this.showFirstSection=this.showFirstSection.bind(this);
+    this.cogSpinner=this.cogSpinner.bind(this);
   }
 
   static getDerivedStateFromProps(props,state){
@@ -42,6 +43,7 @@ export default class ExperienceSection extends Component {
   componentDidUpdate(){
     this.sectionNumber = this.sectionsTrigger();
     this.animateSection(this.state.sectionNumber,this.sectionNumber);
+    this.cogSpinner();
   }
 
   setup(){
@@ -83,7 +85,6 @@ export default class ExperienceSection extends Component {
       newContainer.classList.add("experienceAnimate");
       this.setState({sectionNumber:newSection});
     }
-      
   }
 
   createExperienceSections(){
@@ -99,12 +100,25 @@ export default class ExperienceSection extends Component {
     return divsArray;
   }
 
+  cogSpinner(){
+    let littleCog = document.getElementsByClassName("littleCog")[0];
+    let bigCog = document.getElementsByClassName("bigCog")[0];
+    let degrees = (this.state.scrollPosition%(360*3))/3;
+    littleCog.style.transform = `rotate(${degrees}deg)`
+    bigCog.style.transform = `rotate(${(degrees)*-1}deg)`
+    }
+
   render() {
     return (
         <div className="experienceSection">
-            <div className="experienceSectionContent" id="experienceSectionContent">
-            {this.createExperienceSections()}
-            </div>
+          <div className="experienceSectionContent" id="experienceSectionContent">
+          <div className="animatedCogs">
+            <div className="bigCog"></div>
+            <div className="littleCog"></div>
+          </div>
+          {this.createExperienceSections()}
+          </div>
+            
         </div>
     )
   }

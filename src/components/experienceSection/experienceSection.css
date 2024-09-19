@@ -33,8 +33,40 @@
     z-index:1;
 }
 
+.animatedCogs{
+    position:absolute;
+    top:0;
+    right:0;
+    height:50px;
+    width:50px;
+    z-index:10;
+    margin:20px;
+}
+
+.bigCog, .littleCog{
+background-image:url(../../images/cog.svg);
+background-size:cover;
+position:absolute;
+}
+
+.bigCog{
+    height:65%;
+    width:65%;
+}
+.littleCog{
+    height:50%;
+    width:50%;
+    right:0;
+    bottom:0;
+}
+
+
 @media screen and (max-width: 1000px) and (max-height: 900px){
     .experienceIndividual{
         flex-direction:column;
+    }
+
+    .animatedCogs{
+        top:30vh;
     }
   }

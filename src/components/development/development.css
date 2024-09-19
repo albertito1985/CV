@@ -1,0 +1,184 @@
+.developmentTrack{
+    height:200vh;
+    width:100%;
+    background: var(--Whites-Grayish);
+    position:relative;
+    transition: background-color 1s ease;
+}
+
+.development{
+    width:100%;
+    height:100vh;
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.developmentUpper{
+    width:100%;
+    height:50vh;
+    position:relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.developmentUpperInner{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity:1;
+    transition:opacity 1s ease;
+}
+
+.developmentDown{
+    height:50vh;
+    width:100%;
+}
+
+.developmentInnerLeft{
+    padding:50px;
+}
+
+.tableTittle{
+    font-family: "Roboto Flex";
+    font-weight: 50px;
+    font-size: 2rem;
+    color:var(--Darks-LighterDark);
+    white-space: nowrap;
+
+}
+
+.tableElement{
+    padding:15px;
+    border-bottom:1px solid var(--Whites-Dark);
+}
+
+.tableElement h3{
+    font-family: "Roboto Flex";
+    font-weight:40;
+    font-size: 1rem;
+    color:var(--Darks-LighterDark)
+}
+
+.developmentDown{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+}
+
+.developingSkills{
+    position:absolute;
+    width:fit-content;
+    left:50vw;
+}
+
+.developingSkills h1{
+    font-family: "Roboto Flex";
+    font-weight:40;
+    font-size: 10rem;
+    white-space: nowrap;
+    color: var(--Whites-Dark)
+}
+
+.floatingBox{
+    position:absolute;
+    height:fit-content;
+    width:fit-content;
+    padding: 40px 80px;
+    background:var(--Darks-Dark);
+    border-radius:20px;
+    bottom:-50vh;
+}
+
+.floatingBox a{
+ height:100%;
+ width:100%;
+ display:flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ gap:20px;
+ text-decoration: none;
+}
+
+.floatingBoxImage{
+    height:200px;
+    aspect-ratio: 1 / 1;
+    background-image:url("../../images/Developing/githubWhite.svg");
+}
+
+.floatingBoxText{
+    font-family: "Roboto Flex";
+    font-weight:40;
+    font-size: 5rem;
+    white-space: nowrap;
+    color: var(--Whites-Dark);
+}
+
+/*Animation*/
+
+.developmentUpperInner.disapear{
+    opacity:0;
+}
+
+.developmentTrack.transform{
+    background-color: var(--Whites-Dark);
+}
+
+.developingSkills h1.transform{
+    color: var(--Whites-Grayish);
+}
+
+@media screen and (max-width: 1000px){
+    .developmentInnerRight{
+        display:none;
+    }
+
+    .developmentInnerLeft{
+        width:100%;
+    }
+
+    .floatingBox{
+        width:fit-content;
+    }
+
+    .floatingBox a{
+        flex-direction:column;
+    }
+
+    .floatingBoxImage{
+        height:100px;
+    }
+
+    .floatingBoxText{
+        font-size: 1rem;
+    }
+    .tableElement{
+        /* padding:15px; */
+    }
+  }
+
+  @media screen and (max-width: 500px){
+    .developmentInnerLeft{
+        padding:0;
+    }
+
+    .tableTittle{
+        font-size: 1rem;
+    }
+  }
+
+  
+  

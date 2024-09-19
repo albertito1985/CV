@@ -146,7 +146,6 @@ export default class SectionComponent extends Component {
             </div>
         <div className="myProcessTexts" id="myProcessTexts">
           <div className="myProcessTextInner">
-          
             <h1>My Process</h1>
             <div className="processText">
               <h2 className="myProcessSubtittle" id="textRequirements">Gathering requirements</h2>

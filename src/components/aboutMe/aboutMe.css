@@ -7,10 +7,9 @@
     top:0;
     height: 100vh;
     width:100%;
-    background-image:url('../../images/aboutMe.jpg');
+    background-image:url('../../images/backrgoundaboutMe.svg');
     background-position:center;
     background-size:120%;
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
 }
@@ -70,8 +69,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color:var(--Normals-White);
-    padding-bottom:30px;
+    background-image:var(--Gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 #aboutMeitem-1{
@@ -143,6 +144,11 @@
 
     .aboutMeItemsContent{
         width:100%;
-        padding:50px 20px ;
+        padding:20px 30px;
+        gap:20px;
+    }
+
+    .aboutmeItemsWrap{
+        height: 90vh;
     }
 }

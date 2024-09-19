@@ -27,7 +27,7 @@
     color: var(--Normals-White);
 }
 
-.loading h1{
+.WelcomeMessage h1{
     font-family: Halant;
     font-size: 5rem;
     font-style: normal;
@@ -35,4 +35,27 @@
     font-weight: 400;
     line-height: normal;
     color: var(--Normals-White);
+}
+
+.anLogga h1{
+    font-family:'Cinzel Decorative';
+}
+
+.anLogga{
+    background-color: var(--Darks-Dark);
+    border-radius: 50%;
+    position:relative;
+    height:100px;
+    width:100px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation:rotate 4s linear infinite;
+}
+
+
+@keyframes rotate{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
 }

@@ -12,7 +12,7 @@ export default class MyProcess extends Component {
             vh:undefined
         }
         /*Adjustments */
-        this.startZoom=150;
+        this.startZoom=undefined;
         this.maxZoom=1500;
         /*as it is configured you can conly choose a total of 8 sections*/
         this.sectionsCofee=5;
@@ -28,6 +28,7 @@ export default class MyProcess extends Component {
         this.sectionsTrigger=this.sectionsTrigger.bind(this);
         this.calculateSection=this.calculateSection.bind(this);
         this.updateCoffeeAnimation=this.updateCoffeeAnimation.bind(this);
+        this.getStartZoom=this.getStartZoom.bind(this);
     }
 
     static getDerivedStateFromProps(props,state) {
@@ -36,12 +37,77 @@ export default class MyProcess extends Component {
       return null;
     }
 
-    componentDidMount(){
+    async componentDidMount(){
       let myProcess= document.getElementsByClassName("myProcess")[0];
-      this.intervalZoom=this.maxZoom-this.startZoom;
-      this.cofeePath=this.sectionsCofee*(this.state.vh/2);
       this.coffePosition = myProcess.getBoundingClientRect().y+window.scrollY;
+      this.cofeePath=this.sectionsCofee*(this.state.vh/2);
+      let p = new Promise((resolve,reject)=>{
+        this.getStartZoom(resolve)
+      })
+      p.then((percentage)=>{
+        this.startZoom=percentage;
+        this.intervalZoom=this.maxZoom-this.startZoom;
+      })
     }
+
+    getStartZoom(resolve){
+      /**Aquí me quedé */
+      var div = document.getElementsByClassName("entireImage")[0];
+      var style = div.currentStyle || window.getComputedStyle(div, false);
+      var bg = style.backgroundImage.slice(5, -2);
+      
+      var background = new Image();
+      background.src = bg;
+      /* calculateRatio = calculateRatio.bind(this); */
+      background.onload = calculateRatio;
+      var percentage = undefined;
+      
+        function calculateRatio(){
+          percentage=undefined;
+          if (background.width > background.height) {
+              var ratio = background.height / background.width;
+              if (div.offsetWidth > div.offsetHeight) {
+                  var bgW = div.offsetWidth;
+                  /**Percentage */
+                  percentage = 100;
+                  var bgH = Math.round(div.offsetWidth * ratio);
+                  if (bgH < div.offsetHeight) {
+                      bgH = div.offsetHeight;
+                      bgW = Math.round(bgH / ratio);
+                      /**Percentage */
+                      percentage=(100*bgW)/div.offsetWidth;
+                  }
+              } else {
+                  var bgW = Math.round(div.offsetHeight / ratio);
+                  /**Percentage */
+                  percentage=(100*bgW)/div.offsetWidth;
+                  var bgH = div.offsetHeight;
+              }
+          } else {
+              var ratio = background.width / background.height;
+              if (div.offsetHeight > div.offsetWidth) {
+                  var bgH = div.offsetHeight;
+                  /**Percentage */
+                  percentage=100;
+                  var bgW = Math.round(div.offsetHeight * ratio);
+                  if (bgW > div.offsetWidth) {
+                      bgW = div.offsetWidth;
+                      bgH = Math.round(bgW / ratio);
+                      /**Percentage */
+                      percentage=(100*bgH)/div.offsetHeight;
+                  }
+              } else {
+                  var bgW = Math.round(div.offsetWidth / ratio);
+                  var bgH = div.offsetWidth;
+                  /**Percentage */
+                  percentage=100;
+              }
+          }
+          /* this.startZoom=percentage; */
+          resolve(percentage)
+      }
+    }
+
     componentDidUpdate(){
       this.cofeeAnimation(this.state.scrollPosition);
       this.sectionsTrigger(this.state.scrollPosition);

@@ -4,12 +4,12 @@ import MyProcess from './components/myProcessSection/myProcess';
 import ExperienceSection from './components/experienceSection/experienceSection';
 import AboutMe from './components/aboutMe/aboutMe';
 import ContactMe from './components/contactMe/contactMe';
+import Development from './components/development/development'
 
 export default class App extends Component {
   constructor(props){
     super(props);
       this.state = {
-        loading:true,
         scrollPosition:undefined,
         scrollDirection:undefined
       }
@@ -50,8 +50,10 @@ scrollHandler(){
         <div>
           <Hero/>
           <ExperienceSection configurationObject={configurationObject}/>
+          <Development configurationObject={configurationObject}/>
           <MyProcess configurationObject={configurationObject} />
           <AboutMe/>
+          <div className="me"></div>
           <ContactMe/>
         </div>
     </div>

@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import Lottie from 'react-lottie';
 import computer from '../../animations/computer.json';
 import './loading.css'
 import './WelcomeCarrusell';
@@ -17,11 +16,9 @@ class Loading extends Component{
             }
           };
         return <div className="loading">
-            <Lottie 
-                options={defaultOptions}
-                height={400}
-                width={400}
-            />
+            <div className="anLogga">
+            <h1>AN</h1>
+            </div>
             <div className="WelcomeMessage">
                 <WelcomeCarrusell/>
                 <h3>Loading</h3>

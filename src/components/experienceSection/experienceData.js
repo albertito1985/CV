@@ -8,15 +8,15 @@ import SquidLogo from './../../images/Experience/squidFactor/squidfactorBW.svg';
 import SquidFore1 from './../../images/Experience/squidFactor/foreground1.svg';
 import SquidFore2 from './../../images/Experience/squidFactor/foreground2.png';
 import SquidBack2 from './../../images/Experience/squidFactor/background2.svg';
+import SquidBack3 from './../../images/Experience/squidFactor/LaptopWithContent.jpg';
 import ImageRoller from './imageRoller';
 import Squidfore3Moving from './../../images/Experience/squidFactor/moving1.png';
 import Squidfore3Static from './../../images/Experience/squidFactor/static1.png';
 import mindtempLogo from './../../images/Experience/mindtemp/MindtempLogoWhite.svg';
 import mindtempFore1 from './../../images/Experience/mindtemp/MindtempLogoColor.svg';
 import mindtempBack2 from './../../images/Experience/mindtemp/mindtempBack2.svg';
-import mindtempFore3static from './../../images/Experience/mindtemp/screen1.png';
-import mindtempFore3moving from './../../images/Experience/mindtemp/webContent.png';
 import mindtempFore2 from './../../images/Experience/mindtemp/mobileMockup.png';
+import mindtempFore3 from './../../images/Experience/mindtemp/LaptopWithContent.jpg';
 
 let experienceData = {
     TIBSI: {
@@ -100,8 +100,7 @@ let experienceData = {
                 background:
                     {pic:"none"},
                 foreground:
-                    {type:"component",
-                    pic:<ImageRoller moving={Squidfore3Moving} fixed={Squidfore3Static} name="squidFactor" time="5000" number="3"/>}
+                    {pic:SquidBack3}
             },
         ]
     },Mindtemp:{
@@ -130,8 +129,7 @@ let experienceData = {
                 background:
                     {pic:"none"},
                     foreground:
-                    {type:"component",
-                    pic:<ImageRoller moving={mindtempFore3moving} movingStyle={{transition:"background-position 6s linear"}}fixed={mindtempFore3static} name="mindtemp" time="7000" number="3"/>}
+                    {pic:mindtempFore3}
                 
             },{
                 background:

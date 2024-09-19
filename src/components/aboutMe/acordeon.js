@@ -63,7 +63,7 @@ const AccordionTrigger = React.forwardRef(({ children, className, ...props }, fo
       ref={forwardedRef}
     >
       {children}
-      <ChevronDownIcon className="AccordionChevron" aria-hidden />
+      <div className="chevronWrapper"><ChevronDownIcon className="AccordionChevron" aria-hidden /></div> 
     </Accordion.Trigger>
   </Accordion.Header>
 ));
