@@ -1,18 +1,21 @@
 import TIBSILogo from './../../images/Experience/Tibsi/TIBSILogo.svg';
-import TibsiFore1 from './../../images/Experience/Tibsi/TibsiLoggaColor.svg';
-import TibsiFore2 from './../../images/Experience/Tibsi/mockup2.png';
-import TibsiFore3 from './../../images/Experience/Tibsi/mockup3.png';
-import TibsiBack2 from './../../images/Experience/Tibsi/Background2.svg';
-import TibsiBack3 from './../../images/Experience/Tibsi/Background3.svg';
+import TibsiFore1 from './../../images/Experience/Tibsi/tibsi1.jpg';
+import TibsiFore2 from './../../images/Experience/Tibsi/tibsi2.jpg';
+import TibsiFore3 from './../../images/Experience/Tibsi/tibsi3.jpg';
 import SquidLogo from './../../images/Experience/squidFactor/squidfactorBW.svg';
-import SquidFore1 from './../../images/Experience/squidFactor/foreground1.svg';
-import SquidFore2 from './../../images/Experience/squidFactor/foreground2.png';
-import SquidBack2 from './../../images/Experience/squidFactor/background2.svg';
-import SquidBack3 from './../../images/Experience/squidFactor/LaptopWithContent.jpg';
+import SquidFore1 from './../../images/Experience/squidFactor/squid1.png';
+import SquidBack1 from './../../images/Experience/squidFactor/background1.jpg';
+import SquidFore2 from './../../images/Experience/squidFactor/squid2.png';
+import SquidBack2 from './../../images/Experience/squidFactor/background2.jpg';
+import SquidFore3 from './../../images/Experience/squidFactor/squid3.png';
+import SquidBack3 from './../../images/Experience/squidFactor/background3.jpg';
 import mindtempLogo from './../../images/Experience/mindtemp/MindtempLogoWhite.svg';
 import mindtempFore1 from './../../images/Experience/mindtemp/mindtemp1.jpg';
 import mindtempFore2 from './../../images/Experience/mindtemp/mindtemp2.jpg';
 import mindtempFore3 from './../../images/Experience/mindtemp/mindtemp3.jpg';
+import racketFore1 from './../../images/Experience/Rackethub/racket1.jpg';
+import racketFore2 from './../../images/Experience/Rackethub/racket2.jpg';
+import racketFore3 from './../../images/Experience/Rackethub/racket3.jpg';
 
 let experienceData = {
     TIBSI: {
@@ -35,30 +38,14 @@ let experienceData = {
                     {pic:TibsiFore1}
             },{
                 background:
-                    {pic:TibsiBack2,
-                    style:[{
-                        name:"backgroundSize",
-                        value:"130%"
-                    }]},
+                    {pic:"none"},
                 foreground:
-                    {pic:TibsiFore2,
-                    style:[{
-                        name:"backgroundSize",
-                        value:"100%",}]
-                    }
+                    {pic:TibsiFore2}
             },{
                 background:{
-                    pic:TibsiBack3,
-                    style:[{
-                        name:"backgroundPosition",
-                        value:"top",}]
-                },
+                    pic:"none"},
                 foreground:
-                    {pic:TibsiFore3,
-                    style:[{
-                        name:"backgroundSize",
-                        value:"100%",}]
-                    }
+                    {pic:TibsiFore3}
             },
         ]
     },SquidFactor:{
@@ -76,7 +63,11 @@ let experienceData = {
         pics: [
             {
                 background:
-                    {pic:"none"},
+                    {pic:SquidBack1,
+                        style:[{
+                            name:"backgroundSize",
+                            value:"cover",}]
+                    },
                 foreground:
                     {pic:SquidFore1,
                     style:[{
@@ -88,15 +79,26 @@ let experienceData = {
                     {pic:SquidBack2,
                         style:[{
                             name:"backgroundSize",
-                            value:"85%",}]
+                            value:"cover",}]
                     },
                 foreground:
-                    {pic:SquidFore2}
+                    {pic:SquidFore2,
+                    style:[{
+                        name:"backgroundSize",
+                        value:"70%",}]}
             },{
                 background:
-                    {pic:"none"},
+                    {pic:SquidBack3,
+                        style:[{
+                            name:"backgroundSize",
+                            value:"cover",}]
+                    },
                 foreground:
-                    {pic:SquidBack3}
+                    {pic:SquidFore3,
+                    style:[{
+                        name:"backgroundSize",
+                        value:"70%",}]
+                    }
             },
         ]
     },Mindtemp:{
@@ -116,20 +118,47 @@ let experienceData = {
                 background:
                     {pic:"none"},
                 foreground:
-                    {pic:mindtempFore1,
-                    style:[{
-                        name:"backgroundSize",
-                        value:"70%"}]
-                    }
+                    {pic:mindtempFore1}
             },{
                 background:
                     {pic:"none"},
                 foreground:
                     {pic:mindtempFore3}
                 
-            },{
+            },{background:
+                {pic:"none"},
                 foreground:
                     {pic:mindtempFore2}
+            },
+        ]
+    },RacketHub: {
+        name:"Racket Hub",
+        logo:TIBSILogo,
+        project: "iN-DWise Mobile Application Development",
+        role:"Development Team Lead & UX/UI Designer",
+        description:"In this project I led the development team in India for the iN-DWise mobile application, a sophisticated conversation analysis tool. Focused on enhancing the user experience and interface design to ensure a seamless and intuitive application for users.",
+        comment:"Contact me to have a personal recommendation from this project.",
+        links: {
+            type:"prototype",
+            link:"https://www.figma.com/design/fpI61xYkJlh6MD7PBcmDKJ/TIBSI-APP?node-id=11029-17398&t=30Cs3QzZlgGTam5r-1"
+        },
+        numberOfPics:3,
+        pics: [
+            {
+                background:
+                    {pic:"none"},
+                foreground:
+                    {pic:racketFore1}
+            },{
+                background:
+                    {pic:"none"},
+                foreground:
+                    {pic:racketFore2}
+            },{
+                background:{
+                    pic:"none"},
+                foreground:
+                    {pic:racketFore3}
             },
         ]
     }
