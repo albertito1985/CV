@@ -38,7 +38,7 @@ export default class Development extends Component {
         let floatingBox=document.getElementsByClassName("floatingBox")[0];
         this.pathLength = track.clientHeight;
         this.boxStart = track.getBoundingClientRect().y+window.scrollY;
-        this.animationStart = this.boxStart + 200;
+        this.animationStart = this.boxStart + 500;
         this.boxEnd = this.boxStart + this.pathLength;
         this.textLeftStart=Number(window.getComputedStyle(textBox, false).left.replace("px",""));
         this.floatingBoxBottomStart=Number(window.getComputedStyle(floatingBox, false).bottom.replace("px",""));

@@ -9,14 +9,10 @@ import SquidFore1 from './../../images/Experience/squidFactor/foreground1.svg';
 import SquidFore2 from './../../images/Experience/squidFactor/foreground2.png';
 import SquidBack2 from './../../images/Experience/squidFactor/background2.svg';
 import SquidBack3 from './../../images/Experience/squidFactor/LaptopWithContent.jpg';
-import ImageRoller from './imageRoller';
-import Squidfore3Moving from './../../images/Experience/squidFactor/moving1.png';
-import Squidfore3Static from './../../images/Experience/squidFactor/static1.png';
 import mindtempLogo from './../../images/Experience/mindtemp/MindtempLogoWhite.svg';
-import mindtempFore1 from './../../images/Experience/mindtemp/MindtempLogoColor.svg';
-import mindtempBack2 from './../../images/Experience/mindtemp/mindtempBack2.svg';
-import mindtempFore2 from './../../images/Experience/mindtemp/mobileMockup.png';
-import mindtempFore3 from './../../images/Experience/mindtemp/LaptopWithContent.jpg';
+import mindtempFore1 from './../../images/Experience/mindtemp/mindtemp1.jpg';
+import mindtempFore2 from './../../images/Experience/mindtemp/mindtemp2.jpg';
+import mindtempFore3 from './../../images/Experience/mindtemp/mindtemp3.jpg';
 
 let experienceData = {
     TIBSI: {
@@ -28,7 +24,7 @@ let experienceData = {
         comment:"Contact me to have a personal recommendation from this project.",
         links: {
             type:"prototype",
-            link:"https://www.figma.com/proto/ad6vVy7GuBWbPV05SW8LTT/TIBSI-software-2024-01-30?page-id=169%3A7664&node-id=4738-33221&viewport=294%2C182%2C0.02&t=LobcwTc59tXxHVEU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4738%3A33221&show-proto-sidebar=1"
+            link:"https://www.figma.com/design/fpI61xYkJlh6MD7PBcmDKJ/TIBSI-APP?node-id=11029-17398&t=30Cs3QzZlgGTam5r-1"
         },
         numberOfPics:3,
         pics: [
@@ -74,7 +70,7 @@ let experienceData = {
         comment:null,
         links: {
             type:"prototype",
-            link:"https://www.figma.com/proto/YMg54tzqJ6gcfB9rdlKVn6/Website?page-id=1%3A28&node-id=75-5063&m=dev&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=75%3A5063&show-proto-sidebar=1&t=H81f1SAO4p1XZuoz-1"
+            link:"https://www.figma.com/design/YMg54tzqJ6gcfB9rdlKVn6/SquidFactor-Webapp?node-id=435-8266&t=iCfXTGOImkAurYtY-1"
         },
         numberOfPics:3,
         pics: [
@@ -112,7 +108,7 @@ let experienceData = {
         comment:"Contact me to have a personal recommendation from this project.",
         links: {
             type:"prototype",
-            link:"https://www.figma.com/proto/4eXcIPjSjiXQ0jLk9dMdiQ/Mindtemp?page-id=4%3A156&node-id=727-18452&viewport=255%2C875%2C0.03&t=YTP70f90b7HYJ8Sa-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=727%3A18452"
+            link:"https://www.figma.com/design/4eXcIPjSjiXQ0jLk9dMdiQ/Mindtemp?node-id=2967-21435&t=EdcnYrudcP9zHqOY-1"
         },
         numberOfPics:3,
         pics: [
@@ -128,12 +124,10 @@ let experienceData = {
             },{
                 background:
                     {pic:"none"},
-                    foreground:
+                foreground:
                     {pic:mindtempFore3}
                 
             },{
-                background:
-                    {pic:mindtempBack2},
                 foreground:
                     {pic:mindtempFore2}
             },
