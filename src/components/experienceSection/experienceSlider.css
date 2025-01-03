@@ -8,7 +8,7 @@
     justify-content: baseline;
     align-items: center;
     left:-100%;
-    transition: left 1s ease;
+    transition: left 0.5s ease;
 }
 
 .experienceSliderSectionAnimation{

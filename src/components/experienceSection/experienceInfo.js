@@ -32,7 +32,6 @@ export default class ExperienceInfo extends Component {
       setTimeout(()=>{
         experienceInfoOuter.classList.toggle("experienceInfoOuterAnimation");
       },1000);
-      /* this.setState({showing:!this.props.showing}); */
     }  
   }
 
@@ -71,7 +70,7 @@ export default class ExperienceInfo extends Component {
               <p>{this.props.info.description}</p>
             </div>
             <div className="experienceLinksContainer">
-              <Button label={"To the prototype"} link={this.props.info.links.link}/>
+              <Button label={"To the project"} link={this.props.info.links.link}/>
             </div>
           </div>
           <div className="experienceCommentContainer">

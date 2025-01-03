@@ -8,7 +8,7 @@ const AccordionDemo = ({changeImage}) => (
   <Accordion.Root className="AccordionRoot" type="single" defaultValue="item-1" collapsible onValueChange={changeImage}>
     <Accordion.Item className="AccordionItem"  value="item-1" >
       <AccordionTrigger >Education</AccordionTrigger>
-      <AccordionContent>I am a cognitive scientist from Linköpings Universitet. This means that I exploit the cognitive capacity of a target audience to design technological solutions tailored to maximize their specific experience.</AccordionContent>
+      <AccordionContent>I am a cognitive scientist from Linköpings Universitet, specializing in creating technological solutions designed to optimize the user experience for specific audiences.</AccordionContent>
     </Accordion.Item>
     <Accordion.Item className="AccordionItem" value="item-2">
       <AccordionTrigger>Personality</AccordionTrigger>

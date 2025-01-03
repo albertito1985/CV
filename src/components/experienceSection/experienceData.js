@@ -16,6 +16,7 @@ import mindtempFore3 from './../../images/Experience/mindtemp/mindtemp3.jpg';
 import racketFore1 from './../../images/Experience/Rackethub/racket1.jpg';
 import racketFore2 from './../../images/Experience/Rackethub/racket2.jpg';
 import racketFore3 from './../../images/Experience/Rackethub/racket3.jpg';
+import RackethubLogo from './../../images/Experience/Rackethub/Rackethub.svg';
 
 let experienceData = {
     TIBSI: {
@@ -63,42 +64,19 @@ let experienceData = {
         pics: [
             {
                 background:
-                    {pic:SquidBack1,
-                        style:[{
-                            name:"backgroundSize",
-                            value:"cover",}]
-                    },
+                    {pic:SquidBack1},
                 foreground:
-                    {pic:SquidFore1,
-                    style:[{
-                        name:"backgroundSize",
-                        value:"70%",}]
-                    }
+                    {pic:SquidFore1}
             },{
                 background:
-                    {pic:SquidBack2,
-                        style:[{
-                            name:"backgroundSize",
-                            value:"cover",}]
-                    },
+                    {pic:SquidBack2},
                 foreground:
-                    {pic:SquidFore2,
-                    style:[{
-                        name:"backgroundSize",
-                        value:"70%",}]}
+                    {pic:SquidFore2}
             },{
                 background:
-                    {pic:SquidBack3,
-                        style:[{
-                            name:"backgroundSize",
-                            value:"cover",}]
-                    },
+                    {pic:SquidBack3},
                 foreground:
-                    {pic:SquidFore3,
-                    style:[{
-                        name:"backgroundSize",
-                        value:"70%",}]
-                    }
+                    {pic:SquidFore3}
             },
         ]
     },Mindtemp:{
@@ -133,14 +111,14 @@ let experienceData = {
         ]
     },RacketHub: {
         name:"Racket Hub",
-        logo:TIBSILogo,
-        project: "iN-DWise Mobile Application Development",
-        role:"Development Team Lead & UX/UI Designer",
-        description:"In this project I led the development team in India for the iN-DWise mobile application, a sophisticated conversation analysis tool. Focused on enhancing the user experience and interface design to ensure a seamless and intuitive application for users.",
-        comment:"Contact me to have a personal recommendation from this project.",
+        logo:RackethubLogo,
+        project: "Racket Hub Mobile Application Development",
+        role:"UX/UI Designer",
+        description:"In this project I designed the Racket Hub mobile application, an application to find and join padel games.",
+        comment:"",
         links: {
             type:"prototype",
-            link:"https://www.figma.com/design/fpI61xYkJlh6MD7PBcmDKJ/TIBSI-APP?node-id=11029-17398&t=30Cs3QzZlgGTam5r-1"
+            link:"https://www.figma.com/design/Y7KevEyuHPebGoRrzlZXyw/Racket-hub-2024?node-id=158-23632&t=oRWuQCtKmYHC00Wa-1"
         },
         numberOfPics:3,
         pics: [
