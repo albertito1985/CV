@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Hero from './components/heroSection/hero';
 import MyProcess from './components/myProcessSection/myProcess';
 import ExperienceSection from './components/experienceSection/experienceSection';
-import AboutMe from './components/aboutMe/aboutMe';
 import ContactMe from './components/contactMe/contactMe';
 import Development from './components/development/development'
 
@@ -49,10 +48,9 @@ scrollHandler(){
         </header>
         <div>
           <Hero/>
+          <MyProcess configurationObject={configurationObject} />
           <ExperienceSection configurationObject={configurationObject}/>
           <Development configurationObject={configurationObject}/>
-          <MyProcess configurationObject={configurationObject} />
-          <AboutMe/>
           <div className="me"></div>
           <ContactMe/>
         </div>

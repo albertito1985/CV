@@ -51,14 +51,12 @@ export default class MyProcess extends Component {
     }
 
     getStartZoom(resolve){
-      /**Aquí me quedé */
       var div = document.getElementsByClassName("entireImage")[0];
       var style = div.currentStyle || window.getComputedStyle(div, false);
       var bg = style.backgroundImage.slice(5, -2);
       
       var background = new Image();
       background.src = bg;
-      /* calculateRatio = calculateRatio.bind(this); */
       background.onload = calculateRatio;
       var percentage = undefined;
       

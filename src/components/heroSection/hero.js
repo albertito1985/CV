@@ -11,7 +11,6 @@ export default class Hero extends Component {
     this.state={
     }
     this.animationName=this.animationName.bind(this);
-/*     this.animationDisapear=this.animationDisapear.bind(this); */
   }
 
   componentDidMount(){
@@ -19,10 +18,6 @@ export default class Hero extends Component {
     var container2 = document.getElementsByClassName("namesDown")[0];
     this.animationName(container1,"Up");
     this.animationName(container2,"Down");
-
-    /* var videoSize=document.getElementById("heroVideo").offsetHeight;
-    var heroSection = document.getElementById("hero");
-    heroSection.style.height=videoSize+"px"; */
   }
 
   animationName(container,direction){
