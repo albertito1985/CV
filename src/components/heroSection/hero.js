@@ -29,7 +29,7 @@ export default class Hero extends Component {
       setUpDirection="marginLeft";
     }
     let childWidth = container.offsetWidth;
-    let nameStay = document.getElementsByClassName("heroName")[0].offsetWidth;
+    /* let nameStay = document.getElementsByClassName("heroName")[0].offsetWidth; */
     let nameLogo = document.getElementsByClassName("logoCircle")[0];
     container.style.opacity=0;
     container.style[setUpDirection]=((childWidth)*-1)+"px";
@@ -76,7 +76,7 @@ export default class Hero extends Component {
                     <MdEmail/><a href="mailto:anulo@live.se">anulo@live.se</a>
                 </div>
                 <div className="contactItems linkedin">
-                    <FaLinkedin /><a target="_blank" href="https://www.linkedin.com/in/albertonunezloayza/">/albertonunezloayza</a>
+                    <FaLinkedin /><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/albertonunezloayza/">/albertonunezloayza</a>
                 </div>
             </div>
           </div>

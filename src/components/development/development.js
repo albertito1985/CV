@@ -66,7 +66,6 @@ export default class Development extends Component {
         let floatingBox=document.getElementsByClassName("floatingBox")[0];
 
         let floatingBoxBottomNew= ((this.floatingBoxBottomStart-this.floatingBoxBottomEnd)*percentage)/50;
-        console.log(this.floatingBoxBottomStart-floatingBoxBottomNew)
 
         /* console.log(this.floatingBoxBottomStart-floatingBoxBottomNew); */
         floatingBox.style.bottom=`${this.floatingBoxBottomStart-floatingBoxBottomNew}px`;

@@ -79,7 +79,8 @@ export default class MyProcess extends Component {
                   var bgW = Math.round(div.offsetHeight / ratio);
                   /**Percentage */
                   percentage=(100*bgW)/div.offsetWidth;
-                  var bgH = div.offsetHeight;
+                  /* var bgH = div.offsetHeight; */
+                  bgH = div.offsetHeight;
               }
           } else {
               var ratio = background.width / background.height;

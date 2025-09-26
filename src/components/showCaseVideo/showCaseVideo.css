@@ -1,0 +1,70 @@
+.showCaseVideoRails{
+    height: 400vh;
+    width:100%;
+    background-color:var(--Darks-Dark);
+    position:relative;
+}
+
+.showCaseVideoWagon{
+    height:100vh;
+    width:100%;
+    top:0;
+    position:sticky;
+    overflow:hidden;
+    background:radial-gradient(rgba(253,247,255,0.1) 0%, rgba(0,0,0,0) 60%);
+}
+
+.showCaseVideoContainer{
+    height:50vh;
+    width:50%;
+    aspect-ratio: 9 / 6;
+    
+    position:relative;
+    overflow:hidden;
+    opacity:0;
+    transition: opacity 0.5s;
+    transform:translate(50%,50%);
+}
+
+.showCaseVideoContainer video{
+    width:100%;
+    height:100%;
+    background-image:url("../../images/posters/Designer.jpg");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.showCaseVideoContainer.visible{
+    opacity:1;
+}
+
+.word{
+    font-family: "Krona One, Sans-serif";
+    font-size: 131px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color:var(--Normals-White);
+    opacity:0.05;
+    transition: opacity 1s;
+}
+
+.word.visible{
+    opacity:0.5;
+}
+
+.wordsContainer{
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content:space-evenly;
+    align-items: center;
+    
+    gap:40px;
+    position:absolute;
+    top:0;
+    transition: top 0,5s;
+}

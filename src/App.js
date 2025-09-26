@@ -4,6 +4,7 @@ import MyProcess from './components/myProcessSection/myProcess';
 import ExperienceSection from './components/experienceSection/experienceSection';
 import ContactMe from './components/contactMe/contactMe';
 import Development from './components/development/development'
+import ShowCaseVideo from './components/showCaseVideo/showCaseVideo';
 
 export default class App extends Component {
   constructor(props){
@@ -48,6 +49,7 @@ scrollHandler(){
         </header>
         <div>
           <Hero/>
+          <ShowCaseVideo configurationObject={configurationObject}/>
           <MyProcess configurationObject={configurationObject} />
           <ExperienceSection configurationObject={configurationObject}/>
           <Development configurationObject={configurationObject}/>
